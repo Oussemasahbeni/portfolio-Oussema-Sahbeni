@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
 import { GithubApiService } from '../service/github-api.service';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,6 +12,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export class AboutMeComponent implements OnInit {
 
   private gitApi = inject(GithubApiService);
+  private cd = inject(ChangeDetectorRef);
 
   publicRepos: number = 0
   followers: number = 0
@@ -20,10 +21,11 @@ export class AboutMeComponent implements OnInit {
 
   ngOnInit(): void {
     this.gitApi.getInfo().subscribe((data: any) => {
-
       this.followers = data.followers;
-      this.publicRepos = data.public_repos;
 
+      this.publicRepos = data.public_repos;
+      // Manually mark the component to be checked for changes
+      this.cd.markForCheck();
     });
   }
 
