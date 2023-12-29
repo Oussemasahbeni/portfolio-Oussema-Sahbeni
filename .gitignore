@@ -7,7 +7,7 @@
 /bazel-out
 
 # Ignore environment files
-/src/app/environments*
+/src/environments/environment*
 
 # Node
 /node_modules
