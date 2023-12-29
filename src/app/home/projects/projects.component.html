@@ -15,7 +15,7 @@
     <!-- Card -->
     <div
       id="projects"
-      class="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]"
+      class="group flex flex-col h-full border shadow-sm rounded-xl bg-slate-900 border-gray-700 shadow-slate-700/[.7]"
     >
       <!-- Slider -->
 
@@ -42,7 +42,7 @@
               </div>
 
               <span
-                class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-slate-700"
+                class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 text-xs font-medium text-white rounded shadow-sm bg-slate-700"
                 role="tooltip"
               >
                 {{ item.type }}
@@ -87,7 +87,7 @@
       <div class="p-4 md:p-6">
         @for (technology of item.techs; track $index) {
         <span
-          class="mx-1 p-1 text-xs font-semibold uppercase rounded-full bg-technology text-cyan-400 dark:text-blue-500"
+          class="mx-1 p-1 text-xs font-semibold uppercase rounded-full bg-technology text-blue-500"
         >
           @if (technology==='express') {
 
@@ -107,10 +107,10 @@
         </p>
       </div>
       <div
-        class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-gray-700 dark:divide-gray-700"
+        class="mt-auto flex border-t divide-x border-gray-700 divide-gray-700"
       >
         <a
-          class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+          class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl shadow-sm disabled:opacity-50 disabled:pointer-events-none bg-slate-900 border-gray-700 text-white hover:bg-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-600"
           [href]="item.github"
           target="_blank"
           rel="noopener noreferrer"
@@ -120,7 +120,7 @@
 
         @if (item.report) {
         <a
-          class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+          class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl shadow-sm disabled:opacity-50 disabled:pointer-events-none bg-slate-900 border-gray-700 text-white hover:bg-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-600"
           [href]="item.report"
           target="_blank"
           rel="noopener noreferrer"

@@ -1,66 +1,84 @@
 <!-- Timeline -->
 <div
   id="experience"
-  class="flex justify-center lg:py-10 mt-80 md:mt-96 lg:mt-auto"
+  class="flex justify-center sm:mt-5 lg:py-10 mt-20 md:mt-24 lg:mt-auto overflow-hidden"
 >
   <!-- Timeline -->
-  <div id="experience-title" class="w-full max-w-2xl mt-72 lg:mt-0">
+  <div
+    id="experience-title"
+    class="w-full sm:mt-9 max-w-2xl mt-18 lg:mt-0 overflow-hidden"
+  >
     <h1
-      class="text-white font-fira-code text-center mb-10 text-2xl md:text-3xl lg:text-4xl font-bold bg-clip-text"
+      class="text-white font-fira-code text-center mb-10 text-2xl sm:text-3xl lg:text-4xl font-bold bg-clip-text"
     >
       <span class="text-blue-500">2.0</span> Experience
     </h1>
 
     <!-- Item -->
-    <div id="icon" class="text-gray-400 p-6 shadow-lg">
+    <div id="icon" class="text-gray-400 p-6 shadow-lg w-full overflow-hidden">
       @for (item of experience; track $index) {
       <!-- Experience entries -->
       <!-- Item -->
       <div
-        class="flex flex-col sm:flex-row gap-x-3 relative group rounded-lg hover:bg-gray-100 dark:hover:bg-white/10"
+        class="flex flex-col sm:flex-row gap-x-3 relative group rounded-lg hover:bg-gray-100 hover:bg-white/10 w-full overflow-hidden"
       >
         <a class="absolute inset-0 z-[1]"></a>
 
         <!-- Icon -->
         <div
-          class="relative last:after:hidden after:absolute after:top-0 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700 dark:group-hover:after:bg-gray-600"
+          class="relative last:after:hidden after:absolute after:top-0 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] group-hover:after:bg-gray-600"
         >
           <div class="relative z-10 w-7 h-7 flex justify-center items-center">
             <div
-              class="w-2 h-2 rounded-full bg-white border-2 border-gray-300 group-hover:border-gray-600 dark:bg-gray-800 dark:border-gray-600"
+              class="w-2 h-2 rounded-full border-2 group-hover:border-gray-600 bg-gray-800 border-gray-600"
             ></div>
           </div>
         </div>
         <!-- End Icon -->
 
         <!-- Single entry -->
-        <div class="flex flex-col sm:flex-row items-center gap-x-3">
+        <div
+          class="flex flex-col sm:flex-row items-center gap-x-3 w-full overflow-hidden"
+        >
           <!-- Right Content -->
 
-          <div class="flex-grow pt-0.5 pb-8">
+          <div class="flex-grow pt-0.5 pb-8 w-full overflow-hidden">
             <!-- Left Content -->
             <div class="text-start">
-              <span class="text-sm text-gray-500 dark:text-gray-400">
+              <span class="text-sm text-gray-400">
                 {{ item.date }}
               </span>
             </div>
             <!-- End Left Content -->
 
-            <h3 class="text-xl font-bold text-slate-300">{{ item.title }}</h3>
-            <p class="text-sm text-gray-600 dark:text-teal-200">
+            <h3
+              class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-300"
+            >
+              {{ item.title }}
+            </h3>
+            <p class="text-sm sm:text-base lg:text-lg text-teal-200">
               {{ item.company }}
             </p>
-            <p>{{ item.description }}</p>
+            <p class="text-sm sm:text-base lg:text-lg">
+              {{ item.description }}
+            </p>
 
             @if(item.skills && item.skills!.length > 0){
 
-            <p class="mt-4">
-              Skills: @for (skill of item.skills; track $index) {
-              <span
-                class="bg-technology text-sm text-cyan-400 mr-1 p-2 rounded-full"
-                >{{ skill | uppercase }}</span
-              >}
-            </p>
+            <div
+              class="mt-4 text-sm sm:text-base lg:text-lg flex flex-wrap items-center"
+            >
+              <div>Skills:</div>
+              <div class="flex flex-wrap ml-2">
+                @for (skill of item.skills; track $index) {
+                <span
+                  class="bg-technology text-sm text-cyan-400 mr-1 p-2 rounded-full"
+                >
+                  {{ skill | uppercase }}
+                </span>
+                }
+              </div>
+            </div>
             }
           </div>
           <!-- End Right Content -->

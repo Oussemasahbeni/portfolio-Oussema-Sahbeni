@@ -12,6 +12,10 @@ module.exports = {
         Poppins: ["Poppins", "sans-serif"],
         "fira-code": ["Fira Code", "monospace"],
       },
+      screens: {
+        sm: "624px",
+        md: "768px",
+      },
     },
     variants: {
       extend: {
