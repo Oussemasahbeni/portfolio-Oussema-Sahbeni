@@ -1,0 +1,71 @@
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+.typewriter {
+  @apply overflow-hidden  whitespace-nowrap tracking-wider;
+  border-right: .15em solid #fff;
+  font-family: 'Fira Code', monospace;
+  animation: typing 4s steps(40, end) 3.8s, blink-caret .5s step-end infinite;
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.hero-icon svg {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 1025px) 
+{.hero-icon{
+  width: 45%;
+  padding-bottom: 1rem; 
+}
+  
+}
+
+@media (min-width: 760px) and (max-width: 1024px) {
+  .hero-icon svg {
+    width: 70%;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 759px) {
+  .hero-icon svg {
+    width: 60%;
+  }
+}
+
+@media (max-width: 479px) {
+  .hero-icon svg {
+    width: 50%;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+.bounce {
+  animation: bounce 1s infinite;
+}
