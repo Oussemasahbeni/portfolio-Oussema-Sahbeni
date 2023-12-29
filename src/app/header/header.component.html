@@ -8,10 +8,12 @@
   >
     <div class="flex items-center justify-between">
       <a
-        class="flex-none font-fira-code text-xl font-semibold dark:text-white"
+        class="flex-none cursor-pointer font-fira-code text-xl font-semibold dark:text-white"
         aria-label="Brand"
-        >Spike</a
+        (click)="scrollTo('about')"
       >
+        Oussema<i class="pi pi-caret-up"></i
+      ></a>
       <div class="md:hidden">
         <button
           type="button"
@@ -67,22 +69,22 @@
           >About me</a
         > -->
         <a
-          class="font-semibold text-base font-fira-code text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500"
+          class="font-semibold text-base cursor-pointer font-fira-code text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500"
           (click)="scrollTo('about_me')"
           ><span class="text-blue-500"> 1.0.</span> About me</a
         >
         <a
-          class="font-semibold text-base font-fira-code text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500"
+          class="font-semibold text-base cursor-pointer font-fira-code text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500"
           (click)="scrollTo('experience')"
           ><span class="text-blue-500"> 2.0.</span> Experience</a
         >
         <a
-          class="font-semibold text-base font-fira-code text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500"
+          class="font-semibold text-base cursor-pointer font-fira-code text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500"
           (click)="scrollTo('projects')"
           ><span class="text-blue-500"> 3.0.</span> Projects</a
         >
         <a
-          class="font-semibold text-base font-fira-code text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500"
+          class="font-semibold text-base cursor-pointer font-fira-code text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500"
           (click)="scrollTo('contact')"
           ><span class="text-blue-500"> 4.0.</span> Contact</a
         >
