@@ -19,7 +19,7 @@ export class ContactComponent {
   private toastService = inject(HotToastService);
 
   showToast() {
-    this.toastService.success('Text copied')
+    this.toastService.success('Email copied')
   }
   copyText() {
     const text = 'oussemasahbeni300@gmail.com';
