@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 @Component({
   selector: 'app-about',
   standalone: true,
@@ -9,6 +9,13 @@ import { Component } from '@angular/core';
 export class AboutComponent {
 
   particlesJS: any;
+
+  showArrow = true;
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    this.showArrow = window.pageYOffset === 0;
+  }
 
   ngOnInit() {
     // @ts-ignore
@@ -25,4 +32,7 @@ export class AboutComponent {
     }
   }
 
+
 }
+
+

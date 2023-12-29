@@ -1,5 +1,5 @@
 <div
-  class="max-w-[85rem] h-screen text-left flex flex-col lg:flex-row justify-start mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10"
+  class="max-w-[85rem] text-left flex flex-col lg:flex-row justify-start mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10"
   id="about"
 >
   <div class="flex mt-44 w-full flex-col lg:flex-row">
@@ -35,8 +35,8 @@
       </div>
 
       <!-- Buttons -->
-      <div class="flex gap-4">
-        <div class="mt-8 gap-3 flex justify-left">
+      <div class="flex gap-4 justify-center lg:justify-left">
+        <div class="mt-8 gap-3">
           <a
             class="inline-flex justify-center z-50 items-center gap-x-3 text-center border-2 text-white text-sm font-medium rounded-md focus:outline-none focus:ring-1 focus:ring-gray-600 p-4 focus:ring-offset-gray-800"
             href="https://github.com/Oussemasahbeni"
@@ -69,15 +69,19 @@
       />
     </div>
   </div>
+
   <div
+    [style.opacity]="showArrow ? '1' : '0'"
     class="absolute bottom-11 left-0 right-0 hidden md:flex justify-center z-50"
+    id="arrow"
   >
-    <a (click)="scrollTo('about_me')" class="cursor-pointer"
-      ><i
+    <a (click)="scrollTo('about_me')" class="cursor-pointer">
+      <i
         class="pi pi-angle-double-down text-white text-xl lg:text-2xl bounce"
-      ></i
-    ></a>
+      ></i>
+    </a>
   </div>
 </div>
+
 <!-- End Hero -->
 >
