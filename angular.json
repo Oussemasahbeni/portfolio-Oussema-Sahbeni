@@ -26,7 +26,8 @@
               "src/robots.txt"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/@ngneat/hot-toast/src/styles/styles.css"
             ],
             "scripts": [
               "node_modules/preline/preline.js"
