@@ -1,15 +1,16 @@
 <!-- ========== HEADER ========== -->
 <header
   class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm fixed"
+  aria-label="Main Header"
 >
   <nav
     class="mt-2 relative max-w-[85rem] bg-main w-full border-4 border-gray-200 rounded-[36px] mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto dark:border-gray-700"
-    aria-label="Global"
+    aria-label="Global Navigation"
   >
     <div class="flex items-center justify-between">
       <a
         class="flex-none cursor-pointer font-fira-code text-xl font-semibold dark:text-white"
-        aria-label="Brand"
+        aria-label="Brand, Click to scroll to about section"
         (click)="scrollTo('about')"
       >
         Oussema<i class="pi pi-caret-up"></i
@@ -59,38 +60,39 @@
     <div
       id="navbar-collapse-with-animation"
       class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block"
+      aria-label="Navigation Menu"
     >
       <div
         class="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7"
       >
-        <!-- <a
-          class="font-semibold text-base font-fira-code text-blue-600 md:py-6 dark:text-blue-500"
-          aria-current="page"
-          >About me</a
-        > -->
         <a
           class="font-semibold text-base cursor-pointer font-fira-code text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500"
           (click)="scrollTo('about_me')"
+          aria-label="About me, Click to scroll to about me section"
           ><span class="text-blue-500"> 1.0.</span> About me</a
         >
         <a
           class="font-semibold text-base cursor-pointer font-fira-code text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500"
           (click)="scrollTo('experience')"
+          aria-label="Experience, Click to scroll to experience section"
           ><span class="text-blue-500"> 2.0.</span> Experience</a
         >
         <a
           class="font-semibold text-base cursor-pointer font-fira-code text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500"
           (click)="scrollTo('projects')"
+          aria-label="Projects, Click to scroll to projects section"
           ><span class="text-blue-500"> 3.0.</span> Projects</a
         >
         <a
           class="font-semibold text-base cursor-pointer font-fira-code text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500"
           (click)="scrollTo('contact')"
+          aria-label="Contact, Click to scroll to contact section"
           ><span class="text-blue-500"> 4.0.</span> Contact</a
         >
         <a
           href="https://drive.google.com/uc?export=download&id=1yHqbj0YZXTyL-cDHU4qOO5Xomfn9uItA"
           download
+          aria-label="Download Resume"
           class="font-semibold text-base font-fira-code p-2 border-2 border-blue-500 text-gray-500 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500"
           >Resume <i class="pi pi-file-pdf text-white"></i
         ></a>
