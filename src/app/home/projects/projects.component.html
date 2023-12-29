@@ -32,7 +32,11 @@
             @for (image of item.image; track $index) {
             <div class="hs-carousel-slide hs-tooltip inline-block">
               <div class="flex justify-center h-full bg-slate-900 p-6">
-                <img alt="image" class="hs-tooltip-toggle" [src]="image" />
+                <img
+                  alt="image"
+                  class="hs-tooltip-toggle object-contain"
+                  [src]="image"
+                />
               </div>
 
               <span
