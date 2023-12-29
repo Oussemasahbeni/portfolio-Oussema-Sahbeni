@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { PreloaderComponent } from './preloader/preloader.component';
 import { ContactComponent } from './home/contact/contact.component';
 import { ProjectsComponent } from './home/projects/projects.component';
-
+declare const gtag: Function;
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -19,7 +19,13 @@ import { ProjectsComponent } from './home/projects/projects.component';
 export class AppComponent implements OnInit {
   title = 'portfolio';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        gtag('config', 'G-42206BJGCL', { 'page_path': event.urlAfterRedirects });
+      }
+    })
+  }
 
   ngOnInit(): void {
     this.router.events.subscribe((event: Event) => {
