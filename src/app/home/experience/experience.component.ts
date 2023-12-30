@@ -18,8 +18,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export class ExperienceComponent {
 
   experience = [{
-    title: 'Introductory Internship',
-    date: " Jan 2024 to Jun 2024",
+    title: 'End of Studies Internship',
+    date: " Jan 2024 to Present",
     company: "Inspark Tunis",
     description: "tba.",
     skills: ["angular", "git", "github", "tailwind css", "spring boot", "mySql"]
@@ -29,7 +29,7 @@ export class ExperienceComponent {
     date: " Jan 2023 to Feb 2023",
     company: "CNI Tunis",
     description: "Developed a full-stack web app to streamline project management tasks",
-    skills: ["angular", "git", "github", "bootstrap", "php", "sql"]
+    skills: ["angular", "git", "github", "bootstrap", "php", "mySql"]
   },
   {
     title: 'Introductory Internship',
