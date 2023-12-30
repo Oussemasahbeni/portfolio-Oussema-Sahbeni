@@ -47,6 +47,14 @@
             <div class="text-start">
               <span class="text-sm text-gray-400">
                 {{ item.date }}
+
+                @if(item.current){
+                <span
+                  class="inline-block text-xs sm:text-sm sm:px-1 border-2 border-technology rounded-full bg-technology text-green-500 shadow-md"
+                >
+                  Active
+                </span>
+                }
               </span>
             </div>
             <!-- End Left Content -->

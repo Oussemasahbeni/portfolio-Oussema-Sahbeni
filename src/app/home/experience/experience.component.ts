@@ -21,6 +21,7 @@ export class ExperienceComponent {
     title: 'End of Studies Internship',
     date: " Jan 2024 to Present",
     company: "Inspark Tunis",
+    current: true,
     description: "tba.",
     skills: ["angular", "git", "github", "tailwind css", "spring boot", "mySql"]
   },
