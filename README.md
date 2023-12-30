@@ -1,27 +1,44 @@
-# Portfolio
+# My Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+Welcome to my portfolio! This project showcases my skills and projects developed using Angular v17, the latest control flow techniques, the Preline UI library, GSAP for animations, and various other technologies.
 
-## Development server
+## Technologies Used
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Angular v17:** The framework at the heart of this project, providing a robust structure for building dynamic web applications.
 
-## Code scaffolding
+- **New Control Flow Techniques:** Leveraging the latest control flow features to enhance the efficiency and readability of the codebase.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Preline UI Library:** A powerful UI library that adds a sleek and responsive design to the portfolio, making it visually appealing and user-friendly.
 
-## Build
+- **GSAP (GreenSock Animation Platform):** Utilizing GSAP for smooth and engaging animations, adding a touch of interactivity to the user experience.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Google Analytics:** Integrating Google Analytics to gain insights into user behavior, track page views, and measure the overall performance of the portfolio.
 
-## Running unit tests
+## Deployment
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This portfolio is deployed using Vercel, ensuring seamless and reliable hosting. Check it out live at [https://www.oussemasahbeni.tn](https://www.oussemasahbeni.tn).
 
-## Running end-to-end tests
+## Features
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Modern Design:** The portfolio features a modern and clean design, highlighting my skills, projects, and achievements.
 
-## Further help
+- **Dynamic Content:** Utilizing Angular's capabilities to dynamically update content, ensuring that the portfolio is always up-to-date.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Smooth Animations:** GSAP is employed to create smooth and captivating animations that enhance the overall user experience.
+
+## Getting Started
+
+To get a local copy up and running, follow these simple steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Oussemasahbeni/portfolio-Oussema-Sahbeni
+
+2. Install dependencies:
+   ``` cd your-portfolio
+   npm install
+3. Run the development server:
+   ``` 
+   ng serve
+4. Open your browser and navigate to http://localhost:4200/ to view the portfolio.
+
