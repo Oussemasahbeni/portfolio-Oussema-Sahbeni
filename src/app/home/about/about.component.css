@@ -12,7 +12,7 @@
   @apply overflow-hidden  whitespace-nowrap tracking-wider;
   border-right: .15em solid #fff;
   font-family: 'Fira Code', monospace;
-  animation: typing 4s steps(40, end) 3.8s, blink-caret .5s step-end infinite;
+  animation: typing 5s steps(40, end) 3.8s, blink-caret .5s steps(1, end) infinite;
 }
 
 #particles-js {
