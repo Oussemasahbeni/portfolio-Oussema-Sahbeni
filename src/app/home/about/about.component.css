@@ -1,6 +1,6 @@
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  from { width: 0ch; }
+  to { width: 22ch; } /* Adjust this value based on the length of your text */
 }
 
 @keyframes blink-caret {
@@ -14,6 +14,7 @@
   font-family: 'Fira Code', monospace;
   animation: typing 5s steps(40, end) 3.8s, blink-caret .5s steps(1, end) infinite;
 }
+
 
 #particles-js {
   position: absolute;
