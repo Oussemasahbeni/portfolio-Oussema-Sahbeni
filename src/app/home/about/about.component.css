@@ -1,6 +1,6 @@
 @keyframes typing {
   from { width: 0ch; }
-  to { width: 22ch; } /* Adjust this value based on the length of your text */
+  to { width: 22ch; } 
 }
 
 @keyframes blink-caret {
