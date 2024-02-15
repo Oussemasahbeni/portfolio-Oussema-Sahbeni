@@ -2,10 +2,11 @@ import { ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
 import { GithubApiService } from '../service/github-api.service';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { NgOptimizedImage } from '@angular/common';
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.css'
 })

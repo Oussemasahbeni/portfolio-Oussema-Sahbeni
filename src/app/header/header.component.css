@@ -1,0 +1,21 @@
+.hover-border {
+    position: relative;
+    display: inline-block;
+    margin-left: 0.5rem;
+  }
+
+  .hover-border::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: rgb(17, 173, 230);
+    transition: all 0.2s ease-out;
+    transform: translateX(-50%);
+  }
+
+  .hover-border:hover::after {
+    width: 100%;
+  }

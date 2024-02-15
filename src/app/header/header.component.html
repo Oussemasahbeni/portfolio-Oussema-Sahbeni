@@ -66,35 +66,50 @@
         class="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7"
       >
         <a
-          class="font-semibold text-base cursor-pointer font-fira-code md:py-6 text-gray-400 hover:text-gray-500"
+          class="font-semibold text-base cursor-pointer font-fira-code md:py-6 text-gray-400"
           (click)="scrollTo('about_me')"
           aria-label="About me, Click to scroll to about me section"
-          ><span class="text-blue-500"> 1.0</span> About me</a
         >
+          <div class="hover-border">
+            <span class="text-blue-500"> 1.0</span> About me
+          </div>
+        </a>
         <a
-          class="font-semibold text-base cursor-pointer font-fira-code md:py-6 text-gray-400 hover:text-gray-500"
+          class="font-semibold text-base cursor-pointer font-fira-code md:py-6 text-gray-400"
           (click)="scrollTo('experience')"
           aria-label="Experience, Click to scroll to experience section"
-          ><span class="text-blue-500"> 2.0</span> Experience</a
+        >
+          <div class="hover-border">
+            <span class="text-blue-500"> 2.0</span> Experience
+          </div></a
         >
         <a
-          class="font-semibold text-base cursor-pointer font-fira-code md:py-6 text-gray-400 hover:text-gray-500"
+          class="font-semibold text-base cursor-pointer font-fira-code md:py-6 text-gray-400"
           (click)="scrollTo('projects')"
           aria-label="Projects, Click to scroll to projects section"
-          ><span class="text-blue-500"> 3.0</span> Projects</a
+        >
+          <div class="hover-border">
+            <span class="text-blue-500"> 3.0</span> Projects
+          </div></a
         >
         <a
-          class="font-semibold text-base cursor-pointer font-fira-code md:py-6 text-gray-400 hover:text-gray-500"
+          class="font-semibold text-base cursor-pointer font-fira-code md:py-6 text-gray-400"
           (click)="scrollTo('contact')"
           aria-label="Contact, Click to scroll to contact section"
-          ><span class="text-blue-500"> 4.0</span> Contact</a
+        >
+          <div class="hover-border">
+            <span class="text-blue-500"> 4.0</span> Contact
+          </div></a
         >
         <a
           href="https://drive.google.com/uc?export=download&id=1yHqbj0YZXTyL-cDHU4qOO5Xomfn9uItA"
           download
           aria-label="Download Resume"
-          class="font-semibold text-base font-fira-code p-2 border-2 border-blue-500 text-gray-400 hover:text-gray-500"
-          ><i class="pi pi-file-pdf text-blue-500 mr-1"></i>Resume
+          class="font-semibold text-base font-fira-code p-2 border-2 border-blue-500 text-gray-400 s"
+        >
+          <div class="hover:-translate-y-1">
+            <i class="pi pi-file-pdf text-blue-500 mr-1"></i>Resume
+          </div>
         </a>
       </div>
     </div>

@@ -1,10 +1,11 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
