@@ -1,0 +1,87 @@
+{
+    "welcome": "Bienvenue!",
+    "emailCopied": "E-mail copié dans le presse-papiers",
+    "header": {
+        "aboutMe": "À propos de moi",
+        "experience": "Expérience",
+        "projects": "Projets",
+        "contact": "Contact",
+        "resume": "CV"
+    },
+    "aboutMe": {
+        "title": "Hello there! my name is",
+        "fullStackDeveloper": "Développeur Full Stack"
+    },
+    "introduction": {
+        "title": "Bonjour ! Je m'appelle",
+        "fullStackDeveloper": "Développeur Full-Stack",
+        "description": "Passionné par la création d'expériences web révolutionnaires. Compétent en HTML, CSS, JavaScript, Angular, Java et Node.js. Collaborons pour créer quelque chose d'extraordinaire ! 🚀 Construisons ensemble !",
+        "checkOutMySocials": "Découvrez mes réseaux sociaux :",
+        "explore": "Explorez !"
+    },
+    "home": {
+        "aboutMe": {
+            "title": "À propos de moi",
+            "description": "Je suis récemment diplômé en informatique avec une spécialisation en développement Web. Fort d'une solide expérience dans le développement full-stack, j'ai également un vif intérêt pour l'intelligence artificielle et la science des données. Je suis passionné par l'utilisation de mon ensemble de compétences diversifié pour contribuer à des projets innovants et impactants.",
+            "totalGithubFollowers": "Nombre total d'abonnés sur GitHub",
+            "totalGithubRepos": "Nombre total de dépôts sur GitHub",
+            "areasForGrowth": "Axes de développement",
+            "howMuchIBench": "Combien je soulève"
+        },
+        "experience": {
+            "title": "Expérience",
+            "active": "Actif",
+            "skills": "Compétences",
+            "endOfStudiesInternship": "Stage de fin d'études",
+            "professionalInternship": "Stage professionnel",
+            "introductoryInternship": "Stage d'introduction",
+            "to": "à",
+            "insparkForgeDescription": {
+                "line1": "Pendant mon stage de fin d'études, j'ai développé Inspark Forge, une application de correspondance talents-emplois et de suivi de carrière. Le projet a été récompensé du titre de 'Meilleur Projet du Département'.",
+                "line2": "Implémentation de l'évaluation des compétences avec l'IA générative d'OpenAI pour des recommandations personnalisées.",
+                "line3": "Intégration de l'authentification et de l'autorisation avec Keycloak.",
+                "line4": "Développement d'un système de recommandation utilisant le traitement automatique du langage naturel (NLP) pour l'appariement des emplois.",
+                "line5": "Création d'un système de notification en temps réel avec WebSockets et RabbitMQ.",
+                "line6": "Utilisation de NX pour une application Angular monorepo, améliorant la réutilisabilité.",
+                "line7": "Conception d'une architecture de microservices évolutive avec Spring Boot.",
+                "line8": "Application des principes de DDD pour une architecture maintenable.",
+                "line9": "Création d'une application multilingue pour des utilisateurs diversifiés.",
+                "line10": "Gestion du stockage de fichiers et d'images dans Azure."
+            },
+            "cniDescription": "Développement d'une application web full-stack pour rationaliser les tâches de gestion de projet.",
+            "uibDescription": "Observation approfondie des transactions financières et de la gestion de comptes."
+        },
+        "projects": {
+            "title": "Projets",
+            "ViewSource": "Voir le code source",
+            "InternshipReport": "Rapport de stage",
+            "webApplication": "Application Web",
+            "workoutBuddy": {
+                "description": "Un projet MERN avec JWT pour enregistrer les exercices, suivre l'historique des entraînements et surveiller les progrès."
+            },
+            "insparkForge": {
+                "description": "Une application de correspondance talents-emplois et de suivi de carrière avec l'IA générative d'OpenAI pour l'évaluation personnalisée des compétences et le traitement automatique du langage naturel (NLP) pour un système de recommandation efficace."
+            },
+            "simonGame": {
+                "description": "Un jeu de Simon simple développé avec HTML, CSS et JavaScript."
+            },
+            "productsManager": {
+                "description": "Un projet full-stack avec Angular et Spring Boot pour la gestion des produits."
+            }
+        }
+    },
+    "contact": {
+        "getInTouch": "Me Contacter!",
+        "letsBuild": "Construisons",
+        "somethingTogether": "Quelque chose ensemble",
+        "description": "Je serai ravi de recevoir votre message si vous souhaitez discuter de nouvelles opportunités. Écrivez-moi et je vous répondrai dès que je verrai votre message.",
+        "dontLikeMails": "Vous n'aimez pas les e-mails ? Envoyez-moi plutôt un",
+        "messageInstead": "message à la place 👋"
+    },
+    "footer": {
+        "bye": "Au revoir ! À bientôt",
+        "madeWith": "Réalisé avec",
+        "and": "et",
+        "rightsReserved": "Tous droits réservés."
+    }
+}

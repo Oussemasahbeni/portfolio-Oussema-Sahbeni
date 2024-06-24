@@ -2,6 +2,7 @@
 <header
   class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm fixed"
   aria-label="Main Header"
+  *transloco="let t; read: 'header'"
 >
   <nav
     class="mt-2 relative max-w-[85rem] bg-main w-full border-4 rounded-[36px] mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto border-gray-700"
@@ -71,7 +72,7 @@
           aria-label="About me, Click to scroll to about me section"
         >
           <div class="hover-border">
-            <span class="text-blue-500"> 1.0</span> About me
+            <span class="text-blue-500"> 1.0</span> {{ t("aboutMe") }}
           </div>
         </a>
         <a
@@ -80,7 +81,7 @@
           aria-label="Experience, Click to scroll to experience section"
         >
           <div class="hover-border">
-            <span class="text-blue-500"> 2.0</span> Experience
+            <span class="text-blue-500"> 2.0</span> {{ t("experience") }}
           </div></a
         >
         <a
@@ -89,7 +90,7 @@
           aria-label="Projects, Click to scroll to projects section"
         >
           <div class="hover-border">
-            <span class="text-blue-500"> 3.0</span> Projects
+            <span class="text-blue-500"> 3.0</span> {{ t("projects") }}
           </div></a
         >
         <a
@@ -98,19 +99,88 @@
           aria-label="Contact, Click to scroll to contact section"
         >
           <div class="hover-border">
-            <span class="text-blue-500"> 4.0</span> Contact
+            <span class="text-blue-500"> 4.0</span> {{ t("contact") }}
           </div></a
         >
         <a
-          href="https://drive.google.com/uc?export=download&id=1yHqbj0YZXTyL-cDHU4qOO5Xomfn9uItA"
+          href="https://drive.google.com/file/d/1Fi4HlhgtdtgwcHB01ksroVMUxQd6PXMF/view?usp=sharing"
           download
+          target="_blank"
+          rel="noopener noreferrer"
           aria-label="Download Resume"
           class="font-semibold text-base font-fira-code p-2 border-2 border-blue-500 text-gray-400 s"
         >
           <div class="hover:-translate-y-1">
-            <i class="pi pi-file-pdf text-blue-500 mr-1"></i>Resume
+            <i class="pi pi-file-pdf text-blue-500 mr-1"></i>{{ t("resume") }}
           </div>
         </a>
+
+        <!-- Language -->
+        <select
+          class="p-3 pe-5 block mr-1 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+          [formControl]="langControl"
+        >
+          @for (lang of availableLangs; track $index){
+
+          <option value="{{ lang }}" [selected]="lang === activeLang">
+            {{ lang | uppercase }}
+          </option>
+          }
+        </select>
+
+        <!-- Dark mode -->
+        <button
+          type="button"
+          class="hs-dark-mode-active:hidden block hs-dark-mode group flex items-center text-white hover:text-white-600 font-medium"
+          data-hs-theme-click-value="dark"
+        >
+          <svg
+            class="flex-shrink-0 size-7"
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            data-darkreader-inline-stroke=""
+            style="--darkreader-inline-stroke: currentColor"
+          >
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="hs-dark-mode-active:block hidden hs-dark-mode group flex items-center text-white hover:text-white-600 font-medium"
+          data-hs-theme-click-value="light"
+        >
+          <svg
+            class="flex-shrink-0 size-7"
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            data-darkreader-inline-stroke=""
+            style="--darkreader-inline-stroke: currentColor"
+          >
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+        </button>
       </div>
     </div>
   </nav>

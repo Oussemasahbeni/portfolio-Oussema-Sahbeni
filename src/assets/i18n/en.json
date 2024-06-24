@@ -1,0 +1,83 @@
+{
+    "welcome": "Welcome!",
+    "emailCopied": "Email copied to clipboard!",
+    "header": {
+        "aboutMe": "About Me",
+        "experience": "Experience",
+        "projects": "Projects",
+        "contact": "Contact",
+        "resume": "Resume"
+    },
+    "introduction": {
+        "title": "Hello there! my name is",
+        "fullStackDeveloper": "Full-Stack Developer",
+        "description": "Enthusiastic about crafting groundbreaking web experiences. Skilled in HTML, CSS, JavaScript, Angular, Java, and Node.js. Let's collaborate to create something extraordinary! 🚀 Let's build together!",
+        "checkOutMySocials": "Check out my socials:",
+        "explore": "Explore!"
+    },
+    "home": {
+        "aboutMe": {
+            "title": "About Me",
+            "description": "I am a recent Computer Science graduate specializing in Web Development. With a strong foundation in full-stack development, I also have a keen interest in AI and Data Science. I am passionate about leveraging my diverse skill set to contribute to innovative and impactful projects.",
+            "totalGithubFollowers": "Total Github Followers",
+            "totalGithubRepos": "Total Github Repos",
+            "areasForGrowth": "Areas for Growth",
+            "howMuchIBench": "How much I bench"
+        },
+        "experience": {
+            "title": "Experience",
+            "active": "Active",
+            "skills": "Skills",
+            "endOfStudiesInternship": "End of Studies Internship",
+            "professionalInternship": "Professional Internship",
+            "introductoryInternship": "Introductory Internship",
+            "to": "to",
+            "insparkForgeDescription": {
+                "line1": "During my end-of-studies internship, I developed Inspark Forge, a talent-job matching and career-tracking application. The project was awarded the title of 'Best Project in the Department'.",
+                "line2": "Implemented skill evaluation with OpenAI's generative AI for personalized recommendations.",
+                "line3": "Integrated authentication and authorization using Keycloak.",
+                "line4": "Developed a recommendation system using NLP for job matching.",
+                "line5": "Created a real-time notification system with WebSockets and RabbitMQ.",
+                "line6": "Utilized NX for a monorepo Angular application, enhancing reusability.",
+                "line7": "Designed a scalable microservices architecture with Spring Boot.",
+                "line8": "Applied DDD principles for maintainable architecture.",
+                "line9": "Created a multi-language application for diverse users.",
+                "line10": "Managed file and image storage in Azure."
+            },
+            "cniDescription": "Developed a full-stack web app to streamline project management tasks",
+            "uibDescription": "Extensively observed financial transactions and account management."
+        },
+        "projects": {
+            "title": "Projects",
+            "ViewSource": "View Source Code",
+            "InternshipReport": "Internship Report",
+            "webApplication": "Web Application",
+            "workoutBuddy": {
+                "description": "A MERN project with JWT for logging exercises, tracking workout history, and monitoring progress."
+            },
+            "insparkForge": {
+                "description": "A talent-job matching and career-tracking application with OpenAI's generative AI for personalized Skill Evaluation and Nlp for an efficient recommendation system."
+            },
+            "SimonGame": {
+                "description": "A simple Simon Game built with HTML, CSS, and JavaScript."
+            },
+            "productsManager": {
+                "description": "A full-stack project with Angular and Spring Boot for managing products."
+            }
+        }
+    },
+    "contact": {
+        "getInTouch": "Get in Touch!",
+        "letsBuild": "Let's Build",
+        "somethingTogether": "Something Together",
+        "description": " I will be happy to receive your contact if you want to talk about new opportunities. Write me, and I will reply as soon as I see your message.",
+        "dontLikeMails": " Don't like mails ? Send me a",
+        "messageInstead": " message instead👋"
+    },
+    "footer": {
+        "bye": "Bye! See you soon",
+        "madeWith": "Made with",
+        "and": "and",
+        "rightsReserved": "All rights reserved."
+    }
+}

@@ -1,22 +1,23 @@
 <footer
   id="footer"
-  class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto border-t-2 border-white"
+  class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto border-t-2 dark:border-white"
+  *transloco="let t; read: 'footer'"
 >
   <!-- Grid -->
   <div class="text-center">
     <div>
       <a
-        class="flex-none text-xl font-fira-code text-white focus:outline-none focus:ring-1 focus:ring-gray-600"
+        class="flex-none text-xl font-fira-code dark:text-white focus:outline-none focus:ring-1 focus:ring-gray-600"
         href="#"
         aria-label="Brand"
-        >Bye! See you soon</a
+        >{{ t("bye") }}</a
       >
     </div>
     <!-- End Col -->
 
     <div class="mt-3">
       <p class="text-gray-500">
-        Built with
+        {{ t("madeWith") }}
         <a
           class="font-semibold text-blue-500 hover:text-blue-400"
           href="https://angular.dev"
@@ -24,7 +25,7 @@
           rel="noopener noreferrer"
           >Angular</a
         >
-        using
+        {{ t("and") }}
         <a
           class="font-semibold text-blue-500 hover:text-blue-400"
           href="https://preline.co/index.html"
@@ -35,7 +36,7 @@
         Ui library
       </p>
       <p class="text-gray-500">
-        © Oussema sahbeni. {{ date }} All rights reserved.
+        © Oussema sahbeni. {{ date }} {{ t("rightsReserved") }}
       </p>
     </div>
 
