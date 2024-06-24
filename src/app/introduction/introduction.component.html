@@ -1,6 +1,7 @@
 <div
   class="max-w-[85rem] text-left flex flex-col lg:flex-row justify-start mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10"
   id="about"
+  *transloco="let t; read: 'introduction'"
 >
   <div class="flex mt-44 w-full flex-col lg:flex-row">
     <!-- particles -->
@@ -9,29 +10,27 @@
 
     <!-- Title -->
     <div class="lg:mt-5 max-w-2xl text-center mt-3 md:text-left lg:text-left">
-      <div class="text-white text-2xl">
-        <h1>Hello there! my name is</h1>
+      <div class="dark:text-white text-2xl">
+        <h1>{{ t("title") }}</h1>
       </div>
       <h1
-        class="block font-semibold text-4xl md:text-5xl lg:text-6xl text-gray-200"
+        class="block font-semibold text-4xl md:text-5xl lg:text-6xl dark:text-gray-200"
       >
         Oussema Sahbeni
       </h1>
       <h1
-        class="bg-clip-text font-bold text-xl md:text-5xl mt-4 bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent typewriter inline-block"
+        class="bg-clip-text w-full font-bold text-xl md:text-5xl mt-4 bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent typewriter inline-block"
       >
-        Full-Stack Developer
+        {{ t("fullStackDeveloper") }}
       </h1>
       <div class="mt-5 max-w-3xl text-left">
-        <p class="text-lg text-gray-400">
-          Enthusiastic about crafting groundbreaking web experiences. Skilled in
-          HTML, CSS, JavaScript, Angular, Java, and Node.js. Let's collaborate
-          to create something extraordinary! 🚀 Let's build together!
+        <p class="text-lg dark:text-gray-400">
+          {{ t("description") }}
         </p>
       </div>
 
-      <div class="text-white font-fira-code mt-3">
-        <p>Check out my socials:</p>
+      <div class="dark:text-white font-fira-code mt-3">
+        <p>{{ t("checkOutMySocials") }}</p>
       </div>
 
       <!-- Buttons -->
@@ -40,7 +39,7 @@
       >
         <div class="mt-8 gap-3">
           <div
-            class="overflow-hidden w-32 p-2 h-12 bg-transparent border-white border-2 text-white rounded-md text-xl font-bold cursor-pointer relative z-10 group"
+            class="overflow-hidden w-32 p-2 h-12 bg-transparent dark:border-white border-blue-400 border-2 dark:text-white rounded-md text-xl font-bold cursor-pointer relative z-10 group"
           >
             <i class="pi pi-github"></i>
             <a
@@ -66,14 +65,14 @@
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Explore!</a
+                {{ t("explore") }}</a
               ></span
             >
           </div>
         </div>
         <div class="mt-8 gap-3">
           <div
-            class="overflow-hidden w-32 p-2 h-12 bg-transparent border-white border-2 text-white rounded-md text-xl font-bold cursor-pointer relative z-10 group"
+            class="overflow-hidden w-32 p-2 h-12 bg-transparent dark:border-white border-blue-400 border-2 dark:text-white rounded-md text-xl font-bold cursor-pointer relative z-10 group"
           >
             <i class="pi pi-linkedin"></i>
             <a
@@ -99,7 +98,7 @@
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Explore!</a
+                {{ t("explore") }}</a
               ></span
             >
           </div>
@@ -128,7 +127,7 @@
   >
     <a (click)="scrollTo('about_me')" class="cursor-pointer">
       <i
-        class="pi pi-angle-double-down text-white text-xl lg:text-2xl bounce"
+        class="pi pi-angle-double-down dark:text-white text-xl lg:text-2xl bounce"
       ></i>
     </a>
   </div>

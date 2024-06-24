@@ -19,6 +19,7 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
+    "@jsverse/transloco": "^7.4.2",
     "@ngneat/hot-toast": "^6.0.2",
     "gsap": "^3.12.4",
     "particles.js": "^2.0.0",
