@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [TranslocoModule],
+  imports: [NgOptimizedImage,TranslocoModule],
   templateUrl: './projects.component.html',
 })
 export class ProjectsComponent {
@@ -20,10 +20,10 @@ export class ProjectsComponent {
       report:
         'https://www.linkedin.com/in/oussema-sahbeni/overlay/projects/1867084073/multiple-media-viewer/?profileId=ACoAADaHwFsB8ZAUWeC4HIGti4flwdD8WRI-Jm4&treasuryMediaId=163555452816',
       image: [
-        'assets/workout buddy/login.webp',
-        'assets/workout buddy/signup.webp',
-        'assets/workout buddy/homepage.webp',
-        'assets/workout buddy/bmi.webp',
+        '../../../assets/workout buddy/login.webp',
+        '../../../assets/workout buddy/signup.webp',
+        '../../../assets/workout buddy/homepage.webp',
+        '../../../assets/workout buddy/bmi.webp',
       ],
     },
     {

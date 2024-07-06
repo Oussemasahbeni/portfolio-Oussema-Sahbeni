@@ -7,6 +7,14 @@ import { HomeComponent } from './home/home.component';
 import { PreloaderComponent } from './preloader/preloader.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './home/projects/projects.component';
+
+import { IStaticMethods } from 'preline/preline';
+declare global {
+  interface Window {
+    HSStaticMethods: IStaticMethods;
+  }
+}
+
 declare const gtag: Function;
 @Component({
   selector: 'app-root',
@@ -40,8 +48,7 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         setTimeout(() => {
-          // @ts-ignore
-          HSStaticMethods.autoInit();
+          window.HSStaticMethods.autoInit();
         }, 100);
       }
     });
