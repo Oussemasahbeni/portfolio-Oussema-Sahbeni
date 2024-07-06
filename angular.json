@@ -35,7 +35,6 @@
           },
           "configurations": {
             "production": {
-             
               "budgets": [
                 {
                   "type": "initial",
@@ -54,7 +53,6 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
-
             }
           },
           "defaultConfiguration": "production"

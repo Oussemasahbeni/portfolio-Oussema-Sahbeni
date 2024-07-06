@@ -1,15 +1,17 @@
-import { NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage, CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslocoModule } from '@jsverse/transloco';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [NgOptimizedImage,TranslocoModule],
+  imports: [CommonModule, NgOptimizedImage, TranslocoModule],
   templateUrl: './projects.component.html',
 })
 export class ProjectsComponent {
+  responsiveOptions: any[] | undefined;
   projects: any[] = [
     {
       name: 'Workout Buddy',
@@ -20,10 +22,10 @@ export class ProjectsComponent {
       report:
         'https://www.linkedin.com/in/oussema-sahbeni/overlay/projects/1867084073/multiple-media-viewer/?profileId=ACoAADaHwFsB8ZAUWeC4HIGti4flwdD8WRI-Jm4&treasuryMediaId=163555452816',
       image: [
-        '../../../assets/workout buddy/login.webp',
-        '../../../assets/workout buddy/signup.webp',
-        '../../../assets/workout buddy/homepage.webp',
-        '../../../assets/workout buddy/bmi.webp',
+        'assets/workout buddy/login.webp',
+        'assets/workout buddy/signup.webp',
+        'assets/workout buddy/homepage.webp',
+        'assets/workout buddy/bmi.webp',
       ],
     },
     {
@@ -71,6 +73,26 @@ export class ProjectsComponent {
       ],
     },
   ];
+
+  ngOnInit() {
+    this.responsiveOptions = [
+      {
+        breakpoint: '1199px',
+        numVisible: 1,
+        numScroll: 1,
+      },
+      {
+        breakpoint: '991px',
+        numVisible: 2,
+        numScroll: 1,
+      },
+      {
+        breakpoint: '767px',
+        numVisible: 1,
+        numScroll: 1,
+      },
+    ];
+  }
 
   ngAfterViewInit() {
     gsap.registerPlugin(ScrollTrigger);

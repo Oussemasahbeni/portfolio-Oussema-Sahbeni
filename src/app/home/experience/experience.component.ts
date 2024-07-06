@@ -63,14 +63,14 @@ export class ExperienceComponent {
         title: 'home.experience.professionalInternship',
         date: 'Jan 2023 - Feb 2023',
         company: 'CNI Tunis',
-        description: 'Developed a full-stack web app to streamline project management tasks',
+        description: 'home.experience.cniDescription',
         skills: ['angular', 'git', 'github', 'bootstrap', 'php', 'mySql'],
       },
       {
         title: 'home.experience.introductoryInternship',
         date: 'Jan 2022 - Feb 2022',
         company: 'UIB Tunis',
-        description: 'Extensively observed financial transactions and account management.',
+        description: 'home.experience.uibDescription',
       },
     ];
   }
