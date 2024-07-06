@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [NgOptimizedImage, TranslocoModule],
+  imports: [TranslocoModule],
   templateUrl: './projects.component.html',
 })
 export class ProjectsComponent {

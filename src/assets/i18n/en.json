@@ -58,7 +58,7 @@
             "insparkForge": {
                 "description": "A talent-job matching and career-tracking application with OpenAI's generative AI for personalized Skill Evaluation and Nlp for an efficient recommendation system."
             },
-            "SimonGame": {
+            "simonGame": {
                 "description": "A simple Simon Game built with HTML, CSS, and JavaScript."
             },
             "productsManager": {

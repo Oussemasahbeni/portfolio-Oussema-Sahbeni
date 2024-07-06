@@ -129,10 +129,11 @@
         </select>
 
         <!-- Dark mode -->
+        @if(!isDarkMode){
         <button
           type="button"
-          class="hs-dark-mode-active:hidden block hs-dark-mode group flex items-center text-white hover:text-white-600 font-medium"
-          data-hs-theme-click-value="dark"
+          class="group flex items-center text-white hover:text-white-600 font-medium"
+          (click)="toggleDarkMode()"
         >
           <svg
             class="flex-shrink-0 size-7"
@@ -151,10 +152,11 @@
             <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
           </svg>
         </button>
+        } @if(isDarkMode){
         <button
           type="button"
-          class="hs-dark-mode-active:block hidden hs-dark-mode group flex items-center text-white hover:text-white-600 font-medium"
-          data-hs-theme-click-value="light"
+          class="group flex items-center text-white hover:text-white-600 font-medium"
+          (click)="toggleDarkMode()"
         >
           <svg
             class="flex-shrink-0 size-7"
@@ -181,6 +183,7 @@
             <path d="m19.07 4.93-1.41 1.41"></path>
           </svg>
         </button>
+        }
       </div>
     </div>
   </nav>

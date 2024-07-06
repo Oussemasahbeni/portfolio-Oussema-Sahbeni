@@ -89,40 +89,6 @@
       gtag("js", new Date());
 
       gtag("config", "G-42206BJGCL");
-
-      // Dark mode
-      document.addEventListener("DOMContentLoaded", function () {
-        const html = document.querySelector("html");
-
-        function updateThemePreference() {
-          const isLightOrAuto =
-            localStorage.getItem("hs_theme") === "light" ||
-            (localStorage.getItem("hs_theme") === "auto" &&
-              !window.matchMedia("(prefers-color-scheme: dark)").matches);
-          const isDarkOrAuto =
-            localStorage.getItem("hs_theme") === "dark" ||
-            (localStorage.getItem("hs_theme") === "auto" &&
-              window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-          // Remove existing class if any
-          html.classList.remove("light", "dark");
-
-          // Apply new class based on preference
-          if (isDarkOrAuto) {
-            html.classList.add("dark");
-          } else if (isLightOrAuto) {
-            html.classList.add("light");
-          }
-        }
-
-        // Initial update
-        updateThemePreference();
-
-        // Listen for system theme changes
-        window
-          .matchMedia("(prefers-color-scheme: dark)")
-          .addEventListener("change", updateThemePreference);
-      });
     </script>
   </head>
 
