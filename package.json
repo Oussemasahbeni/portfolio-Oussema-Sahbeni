@@ -23,7 +23,7 @@
     "@ngneat/hot-toast": "^6.0.2",
     "gsap": "^3.12.4",
     "particles.js": "^2.0.0",
-    "preline": "^2.0.2",
+    "preline": "^2.3.0",
     "primeicons": "^6.0.1",
     "primeng": "^17.2.0",
     "rxjs": "~7.8.0",

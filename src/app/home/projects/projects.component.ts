@@ -20,10 +20,10 @@ export class ProjectsComponent {
       report:
         'https://www.linkedin.com/in/oussema-sahbeni/overlay/projects/1867084073/multiple-media-viewer/?profileId=ACoAADaHwFsB8ZAUWeC4HIGti4flwdD8WRI-Jm4&treasuryMediaId=163555452816',
       image: [
-        'assets/workout buddy/login.jpg',
-        'assets/workout buddy/signup.jpg',
-        'assets/workout buddy/homepage.jpg',
-        'assets/workout buddy/bmi.jpg',
+        'assets/workout buddy/login.webp',
+        'assets/workout buddy/signup.webp',
+        'assets/workout buddy/homepage.webp',
+        'assets/workout buddy/bmi.webp',
       ],
     },
     {
@@ -34,15 +34,15 @@ export class ProjectsComponent {
       report:
         'https://drive.google.com/file/d/11M4QYL9bKtrXlIcmcPHD2YGZmGSP6L_q/view?usp=drive_link',
       image: [
-        'assets/insparkForge/company-profile.png',
-        'assets/insparkForge/delete-job-offer.png',
-        'assets/insparkForge/desiredSkills.png',
-        'assets/insparkForge/filter-job-offers.png',
-        'assets/insparkForge/job-offer-details for company.png',
-        'assets/insparkForge/list.png',
-        'assets/insparkForge/profile.png',
-        'assets/insparkForge/stat-company.png',
-        'assets/insparkForge/stat-talent.png',
+        'assets/insparkForge/company-profile.webp',
+        'assets/insparkForge/delete-job-offer.webp',
+        'assets/insparkForge/desiredSkills.webp',
+        'assets/insparkForge/filter-job-offers.webp',
+        'assets/insparkForge/job-offer-details for company.webp',
+        'assets/insparkForge/list.webp',
+        'assets/insparkForge/profile.webp',
+        'assets/insparkForge/stat-company.webp',
+        'assets/insparkForge/stat-talent.webp',
       ],
     },
     {
@@ -52,9 +52,9 @@ export class ProjectsComponent {
       techs: ['javascript', 'css3', 'html5'],
       github: 'https://github.com/Oussemasahbeni/Simon-Game-Challenge',
       image: [
-        'assets/simongame/end.jpg',
-        'assets/simongame/howto.jpg',
-        'assets/simongame/start.jpg',
+        'assets/simongame/end.webp',
+        'assets/simongame/howto.webp',
+        'assets/simongame/start.webp',
       ],
     },
     {
@@ -64,10 +64,10 @@ export class ProjectsComponent {
       techs: ['angularjs', 'spring', 'mysql', 'tailwindcss'],
       github: 'https://github.com/Oussemasahbeni/restApiFront',
       image: [
-        'assets/product manager/categories.jpg',
-        'assets/product manager/landing.jpg',
-        'assets/product manager/login.jpg',
-        'assets/product manager/manage.jpg',
+        'assets/product manager/categories.webp',
+        'assets/product manager/landing.webp',
+        'assets/product manager/login.webp',
+        'assets/product manager/manage.webp',
       ],
     },
   ];
