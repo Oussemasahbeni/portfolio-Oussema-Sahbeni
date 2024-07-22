@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage, TranslocoModule],
+  imports: [CommonModule, TranslocoModule],
   templateUrl: './projects.component.html',
 })
 export class ProjectsComponent {
@@ -21,12 +21,7 @@ export class ProjectsComponent {
       github: 'https://github.com/Oussemasahbeni/Workout-Tracker-mern-project',
       report:
         'https://www.linkedin.com/in/oussema-sahbeni/overlay/projects/1867084073/multiple-media-viewer/?profileId=ACoAADaHwFsB8ZAUWeC4HIGti4flwdD8WRI-Jm4&treasuryMediaId=163555452816',
-      image: [
-        'assets/workout buddy/login.webp',
-        'assets/workout buddy/signup.webp',
-        'assets/workout buddy/homepage.webp',
-        'assets/workout buddy/bmi.webp',
-      ],
+      image: 'assets/workout buddy/homepage.webp',
     },
     {
       name: 'Inspark forge',
@@ -35,17 +30,7 @@ export class ProjectsComponent {
       techs: ['angularjs', 'spring', 'postgresql', 'tailwindcss'],
       report:
         'https://drive.google.com/file/d/11M4QYL9bKtrXlIcmcPHD2YGZmGSP6L_q/view?usp=drive_link',
-      image: [
-        'assets/insparkForge/company-profile.webp',
-        'assets/insparkForge/delete-job-offer.webp',
-        'assets/insparkForge/desiredSkills.webp',
-        'assets/insparkForge/filter-job-offers.webp',
-        'assets/insparkForge/job-offer-details for company.webp',
-        'assets/insparkForge/list.webp',
-        'assets/insparkForge/profile.webp',
-        'assets/insparkForge/stat-company.webp',
-        'assets/insparkForge/stat-talent.webp',
-      ],
+      image: 'assets/insparkForge/filter-job-offers.webp',
     },
     {
       name: 'Simon-Game      ',
@@ -53,11 +38,7 @@ export class ProjectsComponent {
       description: 'home.projects.simonGame.description',
       techs: ['javascript', 'css3', 'html5'],
       github: 'https://github.com/Oussemasahbeni/Simon-Game-Challenge',
-      image: [
-        'assets/simongame/end.webp',
-        'assets/simongame/howto.webp',
-        'assets/simongame/start.webp',
-      ],
+      image: 'assets/simongame/start.webp',
     },
     {
       name: 'Products Manager ',
@@ -65,12 +46,7 @@ export class ProjectsComponent {
       description: 'home.projects.productsManager.description',
       techs: ['angularjs', 'spring', 'mysql', 'tailwindcss'],
       github: 'https://github.com/Oussemasahbeni/restApiFront',
-      image: [
-        'assets/product manager/categories.webp',
-        'assets/product manager/landing.webp',
-        'assets/product manager/login.webp',
-        'assets/product manager/manage.webp',
-      ],
+      image: 'assets/product manager/landing.webp',
     },
   ];
 
