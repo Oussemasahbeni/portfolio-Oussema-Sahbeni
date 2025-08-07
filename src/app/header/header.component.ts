@@ -4,11 +4,10 @@ import { ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 import { UpperCasePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [UpperCasePipe, TranslocoModule, ReactiveFormsModule],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css',
+    selector: 'app-header',
+    imports: [UpperCasePipe, TranslocoModule, ReactiveFormsModule],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit {
   availableLangs = ['en', 'fr'];

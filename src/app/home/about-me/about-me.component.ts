@@ -5,10 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { NgOptimizedImage } from '@angular/common';
 import { TranslocoModule } from '@jsverse/transloco';
 @Component({
-  selector: 'app-about-me',
-  standalone: true,
-  imports: [NgOptimizedImage, TranslocoModule],
-  templateUrl: './about-me.component.html',
+    selector: 'app-about-me',
+    imports: [NgOptimizedImage, TranslocoModule],
+    templateUrl: './about-me.component.html'
 })
 export class AboutMeComponent implements OnInit {
   private gitApi = inject(GithubApiService);

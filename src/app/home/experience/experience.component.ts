@@ -5,11 +5,10 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
-  selector: 'app-experience',
-  standalone: true,
-  imports: [CommonModule, TranslocoModule],
-  templateUrl: './experience.component.html',
-  styleUrl: './experience.component.css',
+    selector: 'app-experience',
+    imports: [CommonModule, TranslocoModule],
+    templateUrl: './experience.component.html',
+    styleUrl: './experience.component.css'
 })
 export class ExperienceComponent {
   experience: any[] = [];

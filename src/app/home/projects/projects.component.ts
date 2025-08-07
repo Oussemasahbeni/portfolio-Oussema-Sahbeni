@@ -5,10 +5,9 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
-  selector: 'app-projects',
-  standalone: true,
-  imports: [CommonModule, TranslocoModule],
-  templateUrl: './projects.component.html',
+    selector: 'app-projects',
+    imports: [CommonModule, TranslocoModule],
+    templateUrl: './projects.component.html'
 })
 export class ProjectsComponent {
   responsiveOptions: any[] | undefined;

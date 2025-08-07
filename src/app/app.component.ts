@@ -17,21 +17,20 @@ declare global {
 
 declare const gtag: Function;
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    HeaderComponent,
-    FooterComponent,
-    HomeComponent,
-    PreloaderComponent,
-    ContactComponent,
-    ProjectsComponent,
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-root',
+    imports: [
+        CommonModule,
+        RouterOutlet,
+        HeaderComponent,
+        FooterComponent,
+        HomeComponent,
+        PreloaderComponent,
+        ContactComponent,
+        ProjectsComponent,
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
   title = 'portfolio';

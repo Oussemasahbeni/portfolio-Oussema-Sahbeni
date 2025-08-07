@@ -2,11 +2,10 @@ import { NgOptimizedImage } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { TranslocoModule } from '@jsverse/transloco';
 @Component({
-  selector: 'app-about',
-  standalone: true,
-  imports: [NgOptimizedImage, TranslocoModule],
-  templateUrl: './introduction.component.html',
-  styleUrl: './introduction.component.css',
+    selector: 'app-about',
+    imports: [NgOptimizedImage, TranslocoModule],
+    templateUrl: './introduction.component.html',
+    styleUrl: './introduction.component.css'
 })
 export class IntroductionComponent {
   particlesJS: any;

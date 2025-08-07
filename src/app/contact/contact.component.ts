@@ -6,11 +6,10 @@ import { HotToastService } from '@ngneat/hot-toast';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 @Component({
-  selector: 'app-contact',
-  standalone: true,
-  imports: [TranslocoModule],
-  templateUrl: './contact.component.html',
-  styleUrl: './contact.component.css',
+    selector: 'app-contact',
+    imports: [TranslocoModule],
+    templateUrl: './contact.component.html',
+    styleUrl: './contact.component.css'
 })
 export class ContactComponent {
   constructor(private clipboard: Clipboard) {}

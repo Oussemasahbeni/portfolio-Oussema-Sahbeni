@@ -2,11 +2,10 @@ import { Component } from '@angular/core';
 import { TranslocoModule } from '@jsverse/transloco';
 import { gsap } from 'gsap';
 @Component({
-  selector: 'app-preloader',
-  standalone: true,
-  imports: [TranslocoModule],
-  templateUrl: './preloader.component.html',
-  styleUrl: './preloader.component.css',
+    selector: 'app-preloader',
+    imports: [TranslocoModule],
+    templateUrl: './preloader.component.html',
+    styleUrl: './preloader.component.css'
 })
 export class PreloaderComponent {
   ngOnInit(): void {

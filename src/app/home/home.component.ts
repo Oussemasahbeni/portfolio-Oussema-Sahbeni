@@ -6,16 +6,15 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { IntroductionComponent } from '../introduction/introduction.component';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [
-    ProjectsComponent,
-    ContactComponent,
-    IntroductionComponent,
-    ExperienceComponent,
-    AboutMeComponent,
-  ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+    selector: 'app-home',
+    imports: [
+        ProjectsComponent,
+        ContactComponent,
+        IntroductionComponent,
+        ExperienceComponent,
+        AboutMeComponent,
+    ],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css'
 })
 export class HomeComponent {}
