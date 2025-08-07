@@ -1,12 +1,12 @@
+
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Event, NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
-import { PreloaderComponent } from './preloader/preloader.component';
+import { Event, NavigationEnd, Router } from '@angular/router';
 import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './home/projects/projects.component';
+import { PreloaderComponent } from './preloader/preloader.component';
 
 import { IStaticMethods } from 'preline/preline';
 declare global {
@@ -17,20 +17,18 @@ declare global {
 
 declare const gtag: Function;
 @Component({
-    selector: 'app-root',
-    imports: [
-        CommonModule,
-        RouterOutlet,
-        HeaderComponent,
-        FooterComponent,
-        HomeComponent,
-        PreloaderComponent,
-        ContactComponent,
-        ProjectsComponent,
-    ],
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.css',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-root',
+  imports: [
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    PreloaderComponent,
+    ContactComponent,
+    ProjectsComponent
+],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
   title = 'portfolio';

@@ -1,6 +1,5 @@
-#footer{
-    background-image: url("../../assets/footer_background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+#footer {
+  background-image: url("../../../public/footer_background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

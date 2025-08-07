@@ -1,4 +1,4 @@
-import { NgOptimizedImage, CommonModule } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslocoModule } from '@jsverse/transloco';
 import { gsap } from 'gsap';
@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
     selector: 'app-projects',
-    imports: [CommonModule, TranslocoModule],
+    imports: [TranslocoModule],
     templateUrl: './projects.component.html'
 })
 export class ProjectsComponent {
@@ -20,7 +20,7 @@ export class ProjectsComponent {
       github: 'https://github.com/Oussemasahbeni/Workout-Tracker-mern-project',
       report:
         'https://www.linkedin.com/in/oussema-sahbeni/overlay/projects/1867084073/multiple-media-viewer/?profileId=ACoAADaHwFsB8ZAUWeC4HIGti4flwdD8WRI-Jm4&treasuryMediaId=163555452816',
-      image: 'assets/workout buddy/homepage.webp',
+      image: '/workout buddy/homepage.webp',
     },
     {
       name: 'Inspark forge',
@@ -29,7 +29,7 @@ export class ProjectsComponent {
       techs: ['angularjs', 'spring', 'postgresql', 'tailwindcss'],
       report:
         'https://drive.google.com/file/d/11M4QYL9bKtrXlIcmcPHD2YGZmGSP6L_q/view?usp=drive_link',
-      image: 'assets/insparkForge/filter-job-offers.webp',
+      image: '/insparkForge/filter-job-offers.webp',
     },
     {
       name: 'Simon-Game      ',
@@ -37,7 +37,7 @@ export class ProjectsComponent {
       description: 'home.projects.simonGame.description',
       techs: ['javascript', 'css3', 'html5'],
       github: 'https://github.com/Oussemasahbeni/Simon-Game-Challenge',
-      image: 'assets/simongame/start.webp',
+      image: '/simongame/start.webp',
     },
     {
       name: 'Products Manager ',
@@ -45,7 +45,7 @@ export class ProjectsComponent {
       description: 'home.projects.productsManager.description',
       techs: ['angularjs', 'spring', 'mysql', 'tailwindcss'],
       github: 'https://github.com/Oussemasahbeni/restApiFront',
-      image: 'assets/product manager/landing.webp',
+      image: '/product manager/landing.webp',
     },
   ];
 

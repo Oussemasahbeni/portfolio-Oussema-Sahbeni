@@ -2,10 +2,10 @@ import { NgOptimizedImage } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { TranslocoModule } from '@jsverse/transloco';
 @Component({
-    selector: 'app-about',
-    imports: [NgOptimizedImage, TranslocoModule],
-    templateUrl: './introduction.component.html',
-    styleUrl: './introduction.component.css'
+  selector: 'app-about',
+  imports: [NgOptimizedImage, TranslocoModule],
+  templateUrl: './introduction.component.html',
+  styleUrl: './introduction.component.css',
 })
 export class IntroductionComponent {
   particlesJS: any;
@@ -19,7 +19,7 @@ export class IntroductionComponent {
 
   ngOnInit() {
     // @ts-ignore
-    particlesJS.load('particles-js', 'assets/particles.json', function () {});
+    particlesJS.load('particles-js', '/particles.json', function () {});
   }
 
   scrollTo(id: string): void {
