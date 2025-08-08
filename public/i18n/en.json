@@ -1,21 +1,21 @@
 {
     "emailCopied": "Email copied to clipboard!",
     "introduction": {
-        "title": "Hello there! my name is",
-        "fullStackDeveloper": "Full-Stack Developer",
-        "description": "Enthusiastic about crafting groundbreaking web experiences. Skilled in HTML, CSS, JavaScript, Angular, Java, and Node.js. Let's collaborate to create something extraordinary! 🚀 Let's build together!",
-        "checkOutMySocials": "Check out my socials:",
-        "sayhi": "Say hi !",
-        "explore": "Explore!"
+        "title": "Hello there! I'm",
+        "fullStackDeveloper": "Fullstack Developer",
+        "description": "Fullstack Developer from Tunisia with 2+ years of hands-on experience designing, deploying, and securing scalable web platforms. Delivered data-driven applications used by 1,000+ users, automating workflows and contributing to mission-focused tech initiatives. Skilled in backend architecture, frontend frameworks, and cloud technologies.",
+        "checkOutMySocials": "Let's connect:",
+        "sayhi": "Say hi!",
+        "explore": "View Projects"
     },
     "home": {
         "aboutMe": {
             "title": "About Me",
-            "description": "I am a recent Computer Science graduate specializing in Web Development. With a strong foundation in full-stack development, I also have a keen interest in AI and Data Science. I am passionate about leveraging my diverse skill set to contribute to innovative and impactful projects.",
+            "description": "Fullstack Developer from Tunisia with 2+ years of experience building scalable web platforms that serve 1,000+ users. I specialize in creating data-driven applications using modern technologies like Angular, Spring Boot, and cloud platforms. Currently pursuing my Engineer's Degree at ESPRIT while working at Inspark, where I architect enterprise-grade solutions with microservices and real-time capabilities.",
             "totalGithubFollowers": "Total Github Followers",
             "totalGithubRepos": "Total Github Repos",
-            "areasForGrowth": "Areas for Growth",
-            "howMuchIBench": "How much I bench",
+            "areasForGrowth": "Years of Experience",
+            "howMuchIBench": "Users Impacted",
             "statsTitle": "By the Numbers",
             "techStackTitle": "Technologies I Work With"
         },

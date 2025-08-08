@@ -86,101 +86,79 @@
         </div>
       </div>
 
-      <!-- Modern 3D Visual Section -->
+      <!-- Code Editor Visual -->
       <div class="relative lg:order-last">
-        <div class="relative mx-auto max-w-md lg:max-w-lg h-96 element-3d">
-          <!-- Floating 3D Objects -->
-          <div class="absolute inset-0 flex items-center justify-center">
-            <!-- Main morphing blob -->
-            <div class="morphing-blob w-64 h-64 opacity-80 glow-effect"></div>
-
-            <!-- Floating geometric shapes -->
-            <div class="absolute top-1/4 left-1/4 w-16 h-16 floating-element">
-              <div
-                class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg shadow-lg transform rotate-12"
-              ></div>
-            </div>
-
+        <div
+          class="relative mx-auto max-w-md lg:max-w-lg h-96 flex items-center justify-center"
+        >
+          <!-- Code Editor Window -->
+          <div
+            class="relative w-full max-w-sm bg-zinc-900 dark:bg-zinc-800 rounded-xl overflow-hidden shadow-2xl border border-zinc-700"
+          >
+            <!-- Window Header -->
             <div
-              class="absolute top-3/4 right-1/4 w-12 h-12 floating-element"
-              style="animation-delay: -2s"
+              class="flex items-center justify-between px-4 py-3 bg-zinc-800 dark:bg-zinc-700 border-b border-zinc-700"
             >
-              <div
-                class="w-full h-full bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-full shadow-lg"
-              ></div>
-            </div>
-
-            <div
-              class="absolute top-1/2 right-1/3 w-8 h-8 floating-element"
-              style="animation-delay: -4s"
-            >
-              <div
-                class="w-full h-full bg-gradient-to-br from-orange-500 to-red-600 transform rotate-45 shadow-lg"
-              ></div>
-            </div>
-
-            <!-- Rotating wireframe cube -->
-            <div
-              class="absolute top-1/3 right-1/4 w-20 h-20 rotating-element opacity-60"
-            >
-              <div class="relative w-full h-full">
-                <div
-                  class="absolute inset-0 border-2 border-blue-400 transform rotate-12 rounded-lg"
-                ></div>
-                <div
-                  class="absolute inset-2 border-2 border-purple-400 transform -rotate-12 rounded-lg"
-                ></div>
-                <div
-                  class="absolute inset-4 border-2 border-emerald-400 transform rotate-45 rounded-lg"
-                ></div>
+              <div class="flex space-x-2">
+                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
               </div>
+              <div class="text-xs text-zinc-400 font-mono">developer.ts</div>
+              <div class="w-4 h-4"></div>
             </div>
 
-            <!-- Background particles -->
-            <div class="absolute inset-0 pointer-events-none">
-              <div
-                class="absolute top-1/6 left-1/6 w-2 h-2 bg-blue-400 rounded-full opacity-70 floating-element"
-              ></div>
-              <div
-                class="absolute top-5/6 left-2/6 w-1 h-1 bg-purple-400 rounded-full opacity-60 floating-element"
-                style="animation-delay: -1s"
-              ></div>
-              <div
-                class="absolute top-2/6 right-1/6 w-3 h-3 bg-emerald-400 rounded-full opacity-50 floating-element"
-                style="animation-delay: -3s"
-              ></div>
-              <div
-                class="absolute top-4/6 right-3/6 w-1.5 h-1.5 bg-orange-400 rounded-full opacity-70 floating-element"
-                style="animation-delay: -5s"
-              ></div>
-            </div>
-
-            <!-- Code-like floating elements -->
+            <!-- Code Content -->
             <div
-              class="absolute top-1/5 left-1/2 floating-element opacity-40"
-              style="animation-delay: -1.5s"
+              class="p-4 h-96 overflow-hidden font-mono text-xs leading-relaxed"
             >
-              <div class="text-xs font-mono text-blue-500 transform -rotate-12">
-                &lt;dev/&gt;
+              <div class="text-purple-400">
+                <span class="text-blue-400 mr-1">interface</span>
+                <span class="text-cyan-300">Developer</span> {{ "{" }}
               </div>
-            </div>
-
-            <div
-              class="absolute bottom-1/5 right-1/2 floating-element opacity-40"
-              style="animation-delay: -3.5s"
-            >
-              <div
-                class="text-xs font-mono text-emerald-500 transform rotate-12"
-              >
-                {{ "{" }} code {{ "}" }}
+              <div class="ml-2 text-emerald-400">
+                name: <span class="text-orange-300">'Oussema Sahbeni'</span>;
+              </div>
+              <div class="ml-2 text-emerald-400">
+                role:
+                <span class="text-orange-300">'Fullstack Developer'</span>;
+              </div>
+              <div class="ml-2 text-emerald-400">
+                experience: <span class="text-yellow-300">2</span
+                ><span class="text-orange-300">+ years</span>;
+              </div>
+              <div class="ml-2 text-emerald-400">
+                location: <span class="text-orange-300">'Tunisia'</span>;
+              </div>
+              <div class="ml-2 text-emerald-400">languages: [</div>
+              <div class="ml-4 text-orange-300">
+                'Java', 'TypeScript', 'Python'
+              </div>
+              <div class="ml-2 text-emerald-400">];</div>
+              <div class="ml-2 text-emerald-400">frameworks: [</div>
+              <div class="ml-4 text-orange-300">
+                'Angular', 'Spring Boot', 'FastAPI'
+              </div>
+              <div class="ml-2 text-emerald-400">];</div>
+              <div class="ml-2 text-emerald-400">cloud: [</div>
+              <div class="ml-4 text-orange-300">'AWS', 'Azure', 'Docker'</div>
+              <div class="ml-2 text-emerald-400">];</div>
+              <div class="ml-2 text-emerald-400">
+                impact:
+                <span class="text-orange-300">'1000+ users served'</span>;
+              </div>
+              <div class="text-purple-400">{{ "}" }}</div>
+              <div class="mt-2 text-zinc-500">
+                <span class="text-green-400">//</span> Building scalable
+                solutions
+              </div>
+              <div class="text-zinc-500">
+                <span class="text-green-400">//</span> Ready for your next
+                project?
+                <span class="animate-pulse text-cyan-400">|</span>
               </div>
             </div>
           </div>
-
-          <!-- Gradient overlay for depth -->
-          <div
-            class="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-white dark:to-zinc-950 opacity-30 pointer-events-none"
-          ></div>
         </div>
       </div>
     </div>

@@ -183,6 +183,8 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Smooth theme transitions */
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 }
 
 /* Component base styles */

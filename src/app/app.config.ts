@@ -29,6 +29,7 @@ export const appConfig: ApplicationConfig = {
       },
       loader: TranslocoHttpLoader,
     }),
+
     provideAppInitializer(() => {
       const translocoService = inject(TranslocoService);
       const defaultLang = translocoService.getDefaultLang();

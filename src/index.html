@@ -216,6 +216,33 @@
 
       gtag("config", "G-42206BJGCL");
     </script>
+    <!-- Theme initialization to prevent flicker in SSG -->
+    <script>
+      (function () {
+        try {
+          const theme = localStorage.getItem("ngp-theme");
+          const systemDark =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+          const shouldBeDark =
+            theme === "dark" ||
+            theme === "system-dark" ||
+            (!theme && systemDark);
+
+          if (shouldBeDark) {
+            document.documentElement.classList.add("dark");
+          }
+        } catch (e) {
+          // Fallback for localStorage issues
+          if (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          ) {
+            document.documentElement.classList.add("dark");
+          }
+        }
+      })();
+    </script>
   </head>
 
   <body>

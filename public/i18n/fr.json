@@ -1,21 +1,21 @@
 {
     "emailCopied": "Email copié dans le presse-papiers !",
     "introduction": {
-        "title": "Salut ! Je m'appelle",
-        "fullStackDeveloper": "Développeur Full-Stack",
-        "description": "Développeur Fullstack de Tunisie avec plus de 2 ans d'expérience pratique dans la conception, le déploiement et la sécurisation de plateformes web évolutives. J'ai livré des applications basées sur les données utilisées par plus de 1 000 utilisateurs, automatisant les flux de travail et contribuant à des initiatives technologiques axées sur la mission. Compétent en architecture backend, frameworks frontend",
-        "checkOutMySocials": "Découvrez mes réseaux sociaux :",
+        "title": "Salut ! Je suis",
+        "fullStackDeveloper": "Développeur Fullstack",
+        "description": "Développeur Fullstack de Tunisie avec plus de 2 ans d'expérience pratique dans la conception, le déploiement et la sécurisation de plateformes web évolutives. J'ai livré des applications basées sur les données utilisées par plus de 1 000 utilisateurs, automatisant les flux de travail et contribuant à des initiatives technologiques axées sur la mission. Compétent en architecture backend, frameworks frontend et technologies cloud.",
+        "checkOutMySocials": "Connectons-nous :",
         "sayhi": "Dites bonjour !",
-        "explore": "Explorer !"
+        "explore": "Voir les Projets"
     },
     "home": {
         "aboutMe": {
             "title": "À Propos de Moi",
-            "description": "Développeur Fullstack de Tunisie avec plus de 2 ans d'expérience pratique dans la conception, le déploiement et la sécurisation de plateformes web évolutives. Actuellement en train de poursuivre un diplôme d'ingénieur en informatique à ESPRIT. Passionné par l'exploitation des technologies de pointe, notamment Angular, Spring Boot, l'infrastructure cloud et l'IA pour créer des solutions percutantes.",
+            "description": "Développeur Fullstack de Tunisie avec plus de 2 ans d'expérience dans la création de plateformes web évolutives qui servent plus de 1 000 utilisateurs. Je me spécialise dans la création d'applications basées sur les données en utilisant des technologies modernes comme Angular, Spring Boot et les plateformes cloud. Actuellement en train de poursuivre mon diplôme d'ingénieur à ESPRIT tout en travaillant chez Inspark, où j'architecte des solutions de niveau entreprise avec des microservices et des capacités temps réel.",
             "totalGithubFollowers": "Total des Abonnés GitHub",
             "totalGithubRepos": "Total des Dépôts GitHub",
-            "areasForGrowth": "Domaines de Croissance",
-            "howMuchIBench": "Combien je soulève",
+            "areasForGrowth": "Années d'Expérience",
+            "howMuchIBench": "Utilisateurs Impactés",
             "statsTitle": "En Chiffres",
             "techStackTitle": "Technologies avec Lesquelles je Travaille"
         },

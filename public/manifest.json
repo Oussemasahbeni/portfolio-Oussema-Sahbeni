@@ -11,13 +11,13 @@
     "scope": "/",
     "icons": [
         {
-            "src": "logo-oussema.webp",
+            "src": "oussema.webp",
             "sizes": "192x192",
             "type": "image/webp",
             "purpose": "any maskable"
         },
         {
-            "src": "logo-oussema.webp",
+            "src": "oussema.webp",
             "sizes": "512x512",
             "type": "image/webp",
             "purpose": "any maskable"
