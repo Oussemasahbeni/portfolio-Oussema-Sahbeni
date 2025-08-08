@@ -1,0 +1,424 @@
+<!-- Modern About Me Section -->
+<section
+  class="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 lg:py-24"
+  *transloco="let t; prefix: 'home.aboutMe'"
+>
+  <div class="space-y-16">
+    <!-- Section Header -->
+    <div data-aos="fade-up" class="text-center space-y-4">
+      <div
+        class="inline-flex items-center gap-2 text-lg font-mono text-zinc-600 dark:text-zinc-400"
+      >
+        <span class="w-8 h-px bg-zinc-300 dark:bg-zinc-700"></span>
+        <span class="text-blue-500 font-semibold">1.0</span>
+        <span>{{ t("title") }}</span>
+        <span class="w-8 h-px bg-zinc-300 dark:bg-zinc-700"></span>
+      </div>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div
+      data-aos="fade-up"
+      data-aos-delay="200"
+      class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+    >
+      <!-- Profile Image -->
+      <div class="relative">
+        <div class="relative mx-auto max-w-sm">
+          <!-- Decorative background -->
+          <div
+            class="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-lg"
+          ></div>
+
+          <!-- Image container -->
+          <div
+            class="relative bg-white dark:bg-zinc-900 rounded-2xl p-6 shadow-xl"
+          >
+            <picture>
+              <source type="image/webp" srcset="oussema.webp" />
+              <img
+                class="w-full h-auto rounded-xl"
+                ngSrc="oussema.png"
+                width="300"
+                height="300"
+                alt="Oussema Sahbeni - Profile"
+                priority
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="space-y-6">
+        <blockquote class="relative">
+          <div
+            class="absolute -top-4 -left-4 text-6xl text-blue-500/20 font-serif"
+          >
+            "
+          </div>
+          <p
+            class="text-lg lg:text-xl leading-relaxed text-zinc-700 dark:text-zinc-300 relative z-10"
+          >
+            {{ t("description") }}
+          </p>
+          <div
+            class="absolute -bottom-4 -right-4 text-6xl text-blue-500/20 font-serif rotate-180"
+          >
+            "
+          </div>
+        </blockquote>
+      </div>
+    </div>
+    <!-- Modern Stats Grid -->
+    <div data-aos="fade-up" data-aos-delay="400" class="space-y-8">
+      <div class="text-center">
+        <h3 class="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+          {{ t("statsTitle") || "By the Numbers" }}
+        </h3>
+        <p class="text-zinc-600 dark:text-zinc-400">
+          Some metrics that define my journey
+        </p>
+      </div>
+
+      <!-- Stats Cards Grid -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- GitHub Followers -->
+        <div class="card group hover:scale-105 transition-all duration-300">
+          <div class="p-6 text-center space-y-4">
+            <div
+              class="w-12 h-12 mx-auto rounded-lg bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20 transition-colors"
+            >
+              <svg
+                class="w-6 h-6 text-blue-500"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+                {{ followers() }}
+              </div>
+              <div class="text-sm text-zinc-600 dark:text-zinc-400">
+                {{ t("totalGithubFollowers") }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GitHub Repos -->
+        <div class="card group hover:scale-105 transition-all duration-300">
+          <div class="p-6 text-center space-y-4">
+            <div
+              class="w-12 h-12 mx-auto rounded-lg bg-emerald-500/10 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors"
+            >
+              <svg
+                class="w-6 h-6 text-emerald-500"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+                {{ publicRepos() }}
+              </div>
+              <div class="text-sm text-zinc-600 dark:text-zinc-400">
+                {{ t("totalGithubRepos") }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Areas of Growth -->
+        <div class="card group hover:scale-105 transition-all duration-300">
+          <div class="p-6 text-center space-y-4">
+            <div
+              class="w-12 h-12 mx-auto rounded-lg bg-purple-500/10 flex items-center justify-center group-hover:bg-purple-500/20 transition-colors"
+            >
+              <svg
+                class="w-6 h-6 text-purple-500"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+                ∞
+              </div>
+              <div class="text-sm text-zinc-600 dark:text-zinc-400">
+                {{ t("areasForGrowth") }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fitness Stats -->
+        <div class="card group hover:scale-105 transition-all duration-300">
+          <div class="p-6 text-center space-y-4">
+            <div
+              class="w-12 h-12 mx-auto rounded-lg bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors"
+            >
+              <svg
+                class="w-6 h-6 text-orange-500"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+                70kg
+              </div>
+              <div class="text-sm text-zinc-600 dark:text-zinc-400">
+                {{ t("howMuchIBench") }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modern Tech Stack -->
+    <div data-aos="fade-up" data-aos-delay="600" class="space-y-8">
+      <div class="text-center">
+        <h3 class="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+          {{ t("techStackTitle") || "Technologies I Work With" }}
+        </h3>
+        <p class="text-zinc-600 dark:text-zinc-400">
+          The tools and frameworks that power my development
+        </p>
+      </div>
+
+      <!-- Fixed Grid Layout for Tech Icons -->
+      <div
+        class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6 max-w-6xl mx-auto"
+      >
+        <!-- Angular -->
+        <div
+          class="flex items-center justify-center w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow cursor-pointer"
+          title="Angular - TypeScript-based web framework"
+        >
+          <img
+            src="https://img.icons8.com/?size=48&id=6SWtW8hxZWSo&format=png"
+            alt="Angular"
+            class="w-10 h-10"
+          />
+        </div>
+
+        <!-- Spring Boot -->
+        <div
+          class="flex items-center justify-center w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow cursor-pointer"
+          title="Spring Boot - Java enterprise framework"
+        >
+          <img
+            src="https://img.icons8.com/?size=48&id=90519&format=png"
+            alt="Spring Boot"
+            class="w-10 h-10"
+          />
+        </div>
+
+        <!-- PostgreSQL -->
+        <div
+          class="flex items-center justify-center w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow cursor-pointer"
+          title="PostgreSQL - Advanced relational database"
+        >
+          <img
+            src="https://img.icons8.com/?size=48&id=38561&format=png"
+            alt="PostgreSQL"
+            class="w-10 h-10"
+          />
+        </div>
+
+        <!-- MongoDB -->
+        <div
+          class="flex items-center justify-center w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow cursor-pointer"
+          title="MongoDB - NoSQL document database"
+        >
+          <img
+            src="https://img.icons8.com/?size=48&id=8rKdRqZFLurS&format=png"
+            alt="MongoDB"
+            class="w-10 h-10"
+          />
+        </div>
+
+        <!-- Docker -->
+        <div
+          class="flex items-center justify-center w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow cursor-pointer"
+          title="Docker - Containerization platform"
+        >
+          <img
+            src="https://img.icons8.com/?size=48&id=cdYUlRaag9G9&format=png"
+            alt="Docker"
+            class="w-10 h-10"
+          />
+        </div>
+
+        <!-- Tailwind CSS -->
+        <div
+          class="flex items-center justify-center w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow cursor-pointer"
+          title="Tailwind CSS - Utility-first CSS framework"
+        >
+          <img
+            src="https://img.icons8.com/?size=48&id=CIAZz2CYc6Kc&format=png"
+            alt="Tailwind CSS"
+          />
+        </div>
+
+        <!-- Keycloak -->
+        <div
+          class="flex items-center justify-center w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow cursor-pointer"
+          title="Keycloak - Identity and access management"
+        >
+          <img
+            class="w-10 h-10"
+            src="https://img.icons8.com/fluency/48/key-cloak.png"
+            alt="key-cloak"
+          />
+        </div>
+
+        <!-- Kafka -->
+        <div
+          class="flex items-center justify-center w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow cursor-pointer"
+          title="Apache Kafka - Distributed streaming platform"
+        >
+          <img
+            src="https://img.icons8.com/?size=48&id=fOhLNqGJsUbJ&format=png"
+            alt="Apache Kafka"
+            class="w-10 h-10"
+          />
+        </div>
+
+        <!-- RabbitMQ -->
+        <div
+          class="flex items-center justify-center w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow cursor-pointer"
+          title="RabbitMQ - Message broker"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg"
+            alt="RabbitMQ"
+            class="w-10 h-10"
+          />
+        </div>
+
+        <!-- Prometheus -->
+        <div
+          class="flex items-center justify-center w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow cursor-pointer"
+          title="Prometheus - Monitoring and alerting toolkit"
+        >
+          <img
+            src="https://img.icons8.com/?size=48&id=lOqoeP2Zy02f&format=png"
+            alt="Prometheus"
+            class="w-10 h-10"
+          />
+        </div>
+
+        <!-- Grafana -->
+        <div
+          class="flex items-center justify-center w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow cursor-pointer"
+          title="Grafana - Analytics and monitoring platform"
+        >
+          <img
+            src="https://img.icons8.com/?size=48&id=9uVrNMu3Zx1K&format=png"
+            alt="Grafana"
+            class="w-10 h-10"
+          />
+        </div>
+
+        <!-- Node.js -->
+        <div
+          class="flex items-center justify-center w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow cursor-pointer"
+          title="Node.js - JavaScript runtime environment"
+        >
+          <img
+            src="https://img.icons8.com/?size=48&id=hsPbhkOH4FMe&format=png"
+            alt="Node.js"
+            class="w-10 h-10"
+          />
+        </div>
+
+        <!-- TypeScript -->
+        <div
+          class="flex items-center justify-center w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow cursor-pointer"
+          title="TypeScript - Typed JavaScript superset"
+        >
+          <img
+            src="https://img.icons8.com/?size=48&id=uJM6fQYqDaZK&format=png"
+            alt="TypeScript"
+            class="w-10 h-10"
+          />
+        </div>
+
+        <!-- Git -->
+        <div
+          class="flex items-center justify-center w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow cursor-pointer"
+          title="Git - Version control system"
+        >
+          <img
+            src="https://img.icons8.com/?size=48&id=20906&format=png"
+            alt="Git"
+            class="w-10 h-10"
+          />
+        </div>
+
+        <!-- AWS -->
+        <div
+          class="flex items-center justify-center w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow cursor-pointer"
+          title="AWS - Amazon Web Services cloud platform"
+        >
+          <img
+            src="https://img.icons8.com/?size=48&id=33039&format=png"
+            alt="AWS"
+            class="w-10 h-10"
+          />
+        </div>
+
+        <!-- Kubernetes -->
+        <div
+          class="flex items-center justify-center w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow cursor-pointer"
+          title="Kubernetes - Container orchestration platform"
+        >
+          <img
+            src="https://img.icons8.com/?size=48&id=cvzmaEA4kC0o&format=png"
+            alt="Kubernetes"
+            class="w-10 h-10"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

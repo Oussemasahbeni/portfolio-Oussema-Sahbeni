@@ -1,88 +1,152 @@
 {
-    "welcome": "Bienvenue!",
-    "emailCopied": "E-mail copié dans le presse-papiers",
-    "header": {
-        "aboutMe": "À propos de moi",
-        "experience": "Expérience",
-        "projects": "Projets",
-        "contact": "Contact",
-        "resume": "CV"
-    },
-    "aboutMe": {
-        "title": "Hello there! my name is",
-        "fullStackDeveloper": "Développeur Full Stack"
-    },
+    "emailCopied": "Email copié dans le presse-papiers !",
     "introduction": {
-        "title": "Bonjour ! Je m'appelle",
+        "title": "Salut ! Je m'appelle",
         "fullStackDeveloper": "Développeur Full-Stack",
-        "description": "Passionné par la création d'expériences web révolutionnaires. Compétent en HTML, CSS, JavaScript, Angular, Java et Node.js. Collaborons pour créer quelque chose d'extraordinaire ! 🚀 Construisons ensemble !",
+        "description": "Développeur Fullstack de Tunisie avec plus de 2 ans d'expérience pratique dans la conception, le déploiement et la sécurisation de plateformes web évolutives. J'ai livré des applications basées sur les données utilisées par plus de 1 000 utilisateurs, automatisant les flux de travail et contribuant à des initiatives technologiques axées sur la mission. Compétent en architecture backend, frameworks frontend",
         "checkOutMySocials": "Découvrez mes réseaux sociaux :",
-        "sayhi": "Say hi !",
-        "explore": "Explorer!"
+        "sayhi": "Dites bonjour !",
+        "explore": "Explorer !"
     },
     "home": {
         "aboutMe": {
-            "title": "À propos de moi",
-            "description": "Je suis récemment diplômé en informatique avec une spécialisation en développement Web. Fort d'une solide expérience dans le développement full-stack, j'ai également un vif intérêt pour l'intelligence artificielle et la science des données. Je suis passionné par l'utilisation de mon ensemble de compétences diversifié pour contribuer à des projets innovants et impactants.",
-            "totalGithubFollowers": "Nombre total d'abonnés sur GitHub",
-            "totalGithubRepos": "Nombre total de dépôts sur GitHub",
-            "areasForGrowth": "Axes de développement",
-            "howMuchIBench": "Combien je soulève"
+            "title": "À Propos de Moi",
+            "description": "Développeur Fullstack de Tunisie avec plus de 2 ans d'expérience pratique dans la conception, le déploiement et la sécurisation de plateformes web évolutives. Actuellement en train de poursuivre un diplôme d'ingénieur en informatique à ESPRIT. Passionné par l'exploitation des technologies de pointe, notamment Angular, Spring Boot, l'infrastructure cloud et l'IA pour créer des solutions percutantes.",
+            "totalGithubFollowers": "Total des Abonnés GitHub",
+            "totalGithubRepos": "Total des Dépôts GitHub",
+            "areasForGrowth": "Domaines de Croissance",
+            "howMuchIBench": "Combien je soulève",
+            "statsTitle": "En Chiffres",
+            "techStackTitle": "Technologies avec Lesquelles je Travaille"
         },
         "experience": {
             "title": "Expérience",
             "active": "Actif",
             "skills": "Compétences",
-            "endOfStudiesInternship": "Stage de fin d'études",
-            "professionalInternship": "Stage professionnel",
-            "introductoryInternship": "Stage d'introduction",
-            "to": "à",
-            "insparkForgeDescription": {
-                "line1": "Pendant mon stage de fin d'études, j'ai développé Inspark Forge, une application de correspondance talents-emplois et de suivi de carrière. Le projet a été récompensé du titre de 'Meilleur Projet du Département'.",
-                "line2": "Implémentation de l'évaluation des compétences avec l'IA générative d'OpenAI pour des recommandations personnalisées.",
-                "line3": "Intégration de l'authentification et de l'autorisation avec Keycloak.",
-                "line4": "Développement d'un système de recommandation utilisant le traitement automatique du langage naturel (NLP) pour l'appariement des emplois.",
-                "line5": "Création d'un système de notification en temps réel avec WebSockets et RabbitMQ.",
-                "line6": "Utilisation de NX pour une application Angular monorepo, améliorant la réutilisabilité.",
-                "line7": "Conception d'une architecture de microservices évolutive avec Spring Boot.",
-                "line8": "Application des principes de DDD pour une architecture maintenable.",
-                "line9": "Création d'une application multilingue pour des utilisateurs diversifiés.",
-                "line10": "Gestion du stockage de fichiers et d'images dans Azure."
-            },
-            "cniDescription": "Développement d'une application web full-stack pour rationaliser les tâches de gestion de projet.",
-            "uibDescription": "Observation approfondie des transactions financières et de la gestion de comptes."
+            "experiences": [
+                {
+                    "title": "Développeur Logiciel",
+                    "date": "Jan 2024 - Présent",
+                    "company": "Inspark, Ariana, Tunisie",
+                    "description": [
+                        "Maintenance d'applications Angular/Spring Boot de niveau entreprise avec SSO Keycloak et architecture de composants modulaires",
+                        "Refactorisation des services principaux en modules réutilisables utilisant la conception pilotée par domaine, augmentant la maintenabilité de 30%",
+                        "Intégration de RabbitMQ et WebSocket pour la messagerie en temps réel; déploiement et surveillance d'applications via AWS et Azure"
+                    ]
+                },
+                {
+                    "title": "Stagiaire",
+                    "date": "Jan 2023 - Fév 2023",
+                    "company": "Centre National de l'Informatique, Tunisie",
+                    "description": [
+                        "Développement d'une plateforme interne de gestion de tâches adoptée par 3 départements; amélioration de l'efficacité de suivi de 50%",
+                        "Configuration d'accès basé sur les rôles via Spring Security; optimisation des requêtes PostgreSQL pour réduire la latence API de 35%"
+                    ]
+                }
+            ]
         },
         "projects": {
             "title": "Projets",
-            "ViewSource": "Voir le code source",
-            "InternshipReport": "Rapport de stage",
-            "webApplication": "Application Web",
-            "workoutBuddy": {
-                "description": "Un projet MERN avec JWT pour enregistrer les exercices, suivre l'historique des entraînements et surveiller les progrès."
-            },
-            "insparkForge": {
-                "description": "Une application de correspondance talents-emplois et de suivi de carrière avec l'IA générative d'OpenAI pour l'évaluation personnalisée des compétences et le traitement automatique du langage naturel (NLP) pour un système de recommandation efficace."
-            },
-            "simonGame": {
-                "description": "Un jeu de Simon simple développé avec HTML, CSS et JavaScript."
-            },
-            "productsManager": {
-                "description": "Un projet full-stack avec Angular et Spring Boot pour la gestion des produits."
-            }
+            "ViewProject": "Voir le Projet",
+            "Private": "Projet Privé",
+            "keyFeatures": "Fonctionnalités Clés",
+            "technologies": "Technologies",
+            "projectsList": [
+                {
+                    "name": "Plateforme Sabeel",
+                    "type": "Plateforme de Réintégration",
+                    "description": "Plateforme de réintégration pour ex-détenus, offrant des ressources et opportunités sur mesure. Direction du développement de bout en bout aidant plus de 500 ex-détenus, amélioration de l'accès au placement professionnel et à la formation de 40%.",
+                    "highlights": [
+                        "Assistance à plus de 500 ex-détenus pour la réintégration",
+                        "Amélioration de l'accès au placement professionnel de 40%",
+                        "Développement de plateforme de bout en bout",
+                        "Ressources et opportunités sur mesure"
+                    ]
+                },
+                {
+                    "name": "Plateforme One Saha",
+                    "type": "Plateforme de Santé Publique",
+                    "description": "Plateforme communautaire pour l'agrégation de données de santé publique et l'engagement. Construction du backend avec plus de 10 services modulaires, agrégation automatisée de plus de 150 entrées d'actualités mensuelles utilisant la classification ML.",
+                    "highlights": [
+                        "Plus de 10 services modulaires utilisant les principes de conception orientée domaine",
+                        "Classification automatisée d'actualités alimentée par ML",
+                        "Plus de 150 entrées mensuelles traitées",
+                        "Engagement de santé communautaire"
+                    ]
+                },
+                {
+                    "name": "Inspark Forge",
+                    "type": "Correspondance de Talents Alimentée par IA",
+                    "description": "Plateforme de correspondance de talents alimentée par IA pour la Tunisie. Conception d'architecture de microservices évolutive utilisant Spring Boot et DDD, intégration d'OpenAI GPT-4o pour l'évaluation intelligente des compétences.",
+                    "highlights": [
+                        "Intégration OpenAI GPT-4o pour l'évaluation des compétences",
+                        "Microservices évolutifs avec DDD",
+                        "Correspondance de talents alimentée par IA",
+                        "Adapté au marché du travail tunisien"
+                    ]
+                },
+                {
+                    "name": "Site Web Officiel du Ministère de l'Agriculture",
+                    "type": "Plateforme Web Gouvernementale",
+                    "description": "Site web officiel du Ministère de l'Agriculture de Tunisie. Fournit un accès complet aux informations, services et actualités liés à l'agriculture, la pêche et le développement rural. Comprend une authentification sécurisée, des capacités de recherche avancées et une limitation de taux pour des performances optimales.",
+                    "highlights": [
+                        "Implémentation de sécurité de niveau gouvernemental",
+                        "Recherche avancée alimentée par Elasticsearch",
+                        "Limitation de taux avec Resilience4j",
+                        "Gestion d'identité Keycloak"
+                    ]
+                },
+                {
+                    "name": "Konnect Spring Boot Starter",
+                    "type": "Bibliothèque Open Source",
+                    "description": "Un starter Spring Boot robuste pour l'intégration avec la passerelle de paiement Konnect. Gère la communication HTTP de bas niveau, l'authentification et la gestion d'erreurs avec des fonctionnalités de niveau production comme l'auto-configuration, la gestion de webhooks et les modèles de résilience.",
+                    "highlights": [
+                        "Auto-configuration pour Spring Boot",
+                        "Gestion sécurisée de webhooks",
+                        "Utilitaires de vérification de paiement",
+                        "Limitation de taux et tentatives intégrées",
+                        "Publié sur Maven Central"
+                    ]
+                },
+                {
+                    "name": "Thème Keycloak Personnalisé avec Keycloakify",
+                    "type": "Personnalisation de l'Interface d'Authentification",
+                    "description": "Thème de connexion Keycloak personnalisé construit avec Keycloakify et Tailwind CSS. Modernise l'interface Keycloak par défaut avec un design responsive, un support de mode sombre et des modèles d'email personnalisés pour une expérience utilisateur améliorée.",
+                    "highlights": [
+                        "Interface de connexion moderne basée sur React",
+                        "Design responsive avec Tailwind CSS",
+                        "Support du mode sombre",
+                        "Modèles d'email personnalisés",
+                        "Intégration Keycloakify"
+                    ]
+                }
+            ]
         }
     },
     "contact": {
-        "getInTouch": "Me Contacter!",
-        "letsBuild": "Construisons",
-        "somethingTogether": "Quelque chose ensemble",
-        "description": "Je serai ravi de recevoir votre message si vous souhaitez discuter de nouvelles opportunités. Écrivez-moi et je vous répondrai dès que je verrai votre message.",
-        "dontLikeMails": "Vous n'aimez pas les e-mails ? Envoyez-moi plutôt un",
-        "messageInstead": "message à la place 👋"
+        "getInTouch": "Prenez Contact !",
+        "email": {
+            "title": "Email",
+            "description": "Envoyez-moi un message à tout moment",
+            "address": "oussemasahbeni300@gmail.com"
+        },
+        "phone": {
+            "title": "Téléphone",
+            "description": "Appelez-moi directement",
+            "number": "+216 54 750 526"
+        },
+        "linkedin": {
+            "title": "LinkedIn",
+            "description": "Vous n'aimez pas les emails ? Envoyez-moi un message à la place👋"
+        },
+        "github": {
+            "title": "GitHub",
+            "description": "Découvrez mon code et mes projets"
+        },
+        "dontLikeMails": "Vous n'aimez pas les emails ? Envoyez-moi un",
+        "messageInstead": "message à la place👋"
     },
     "footer": {
-        "bye": "Au revoir ! À bientôt",
-        "madeWith": "Réalisé avec",
-        "and": "et",
         "rightsReserved": "Tous droits réservés."
     }
 }

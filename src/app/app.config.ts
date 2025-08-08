@@ -1,4 +1,4 @@
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import {
   ApplicationConfig,
   inject,
@@ -6,6 +6,10 @@ import {
   provideAppInitializer,
   provideZonelessChangeDetection,
 } from '@angular/core';
+import {
+  provideClientHydration,
+  withEventReplay,
+} from '@angular/platform-browser';
 import { provideTransloco, TranslocoService } from '@jsverse/transloco';
 import { provideHotToastConfig } from '@ngxpert/hot-toast';
 import { firstValueFrom } from 'rxjs';
@@ -13,13 +17,13 @@ import { TranslocoHttpLoader } from './transloco-loader';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     provideZonelessChangeDetection(),
     provideHotToastConfig(),
     provideTransloco({
       config: {
         availableLangs: ['en', 'fr'],
-        defaultLang: localStorage.getItem('activeLang') ?? 'en',
+        defaultLang: 'en',
         reRenderOnLangChange: true,
         prodMode: !isDevMode(),
       },
@@ -31,5 +35,6 @@ export const appConfig: ApplicationConfig = {
       translocoService.setActiveLang(defaultLang);
       return firstValueFrom(translocoService.load(defaultLang));
     }),
+    provideClientHydration(withEventReplay()),
   ],
 };

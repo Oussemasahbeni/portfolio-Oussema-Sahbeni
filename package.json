@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "serve:ssr:portfolio": "node dist/portfolio/server/server.mjs"
   },
   "prettier": {
     "overrides": [
@@ -26,14 +27,18 @@
     "@angular/core": "^20.1.6",
     "@angular/forms": "^20.1.6",
     "@angular/platform-browser": "^20.1.6",
+    "@angular/platform-server": "^20.1.6",
     "@angular/router": "^20.1.6",
+    "@angular/ssr": "^20.1.5",
+    "@floating-ui/dom": "^1.6.0",
     "@jsverse/transloco": "^7.6.1",
+    "@ng-icons/core": "^32.1.0",
+    "@ng-icons/radix-icons": "^32.1.0",
     "@ngxpert/hot-toast": "^5.1.1",
     "@tailwindcss/postcss": "^4.1.11",
     "aos": "^2.3.4",
-    "particles.js": "^2.0.0",
-    "preline": "^3.2.3",
-    "primeicons": "^6.0.1",
+    "express": "^5.1.0",
+    "ng-primitives": "^0.71.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
@@ -42,7 +47,9 @@
     "@angular/cli": "^20.1.5",
     "@angular/compiler-cli": "^20.1.6",
     "@types/aos": "^3.0.7",
+    "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
+    "@types/node": "^20.17.19",
     "autoprefixer": "^10.4.16",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",

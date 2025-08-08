@@ -1,27 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap') */
-@import "primeicons/primeicons.css";
+/* Modern Next.js-inspired Design System */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
 @import "tailwindcss";
-@import "../node_modules/preline/variants.css";
 @import "aos/dist/aos.css";
-
-@source '../node_modules/preline/dist/*.js';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-main: #0a192f;
-  --color-technology: #142b46;
-  --color-letters: #204850;
+  /* Modern spacing and sizing */
+  --radius: 0.75rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
 
-  --font-Poppins: Poppins, sans-serif;
-  --font-fira-code: Fira Code, monospace;
+  /* Enhanced typography */
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, "Cascadia Code",
+    "Roboto Mono", Consolas, "Courier New", monospace;
 
-  --breakpoint-sm: 624px;
-  --breakpoint-md: 768px;
+  /* Next.js-inspired color palette - Light Mode */
+  --color-background: 255 255 255;
+  --color-foreground: 9 9 11;
+  --color-card: 255 255 255;
+  --color-card-foreground: 9 9 11;
+  --color-popover: 255 255 255;
+  --color-popover-foreground: 9 9 11;
 
+  /* Primary colors inspired by Vercel's brand */
+  --color-primary: 9 9 11;
+  --color-primary-foreground: 250 250 250;
+  --color-secondary: 244 244 245;
+  --color-secondary-foreground: 9 9 11;
+
+  /* Muted colors for subtle elements */
+  --color-muted: 244 244 245;
+  --color-muted-foreground: 113 113 122;
+
+  /* Accent colors */
+  --color-accent: 244 244 245;
+  --color-accent-foreground: 9 9 11;
+
+  /* Status colors */
+  --color-destructive: 239 68 68;
+  --color-destructive-foreground: 248 250 252;
+  --color-success: 34 197 94;
+  --color-success-foreground: 240 253 244;
+  --color-warning: 245 158 11;
+  --color-warning-foreground: 254 252 232;
+
+  /* Border and input colors */
+  --color-border: 228 228 231;
+  --color-input: 228 228 231;
+  --color-ring: 9 9 11;
+
+  /* Chart colors */
+  --color-chart-1: 99 102 241;
+  --color-chart-2: 236 72 153;
+  --color-chart-3: 34 197 94;
+  --color-chart-4: 245 158 11;
+  --color-chart-5: 239 68 68;
+
+  /* Animation and transitions */
+  --animate-in: fade-in 0.2s ease-out;
+  --animate-out: fade-out 0.2s ease-in;
   --animate-infinite-scroll: infinite-scroll 25s linear infinite;
+
+  /* Shadows inspired by Next.js */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
 
   @keyframes infinite-scroll {
     from {
@@ -31,26 +90,127 @@
       transform: translateX(-100%);
     }
   }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+
+  @keyframes slide-in-from-right {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-out-to-right {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+/* Dark mode - Next.js inspired dark theme */
+.dark {
+  --color-background: 9 9 11;
+  --color-foreground: 250 250 250;
+  --color-card: 24 24 27;
+  --color-card-foreground: 250 250 250;
+  --color-popover: 24 24 27;
+  --color-popover-foreground: 250 250 250;
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
+  --color-primary: 250 250 250;
+  --color-primary-foreground: 9 9 11;
+  --color-secondary: 39 39 42;
+  --color-secondary-foreground: 250 250 250;
+
+  --color-muted: 39 39 42;
+  --color-muted-foreground: 161 161 170;
+
+  --color-accent: 39 39 42;
+  --color-accent-foreground: 250 250 250;
+
+  --color-destructive: 220 38 38;
+  --color-destructive-foreground: 248 250 252;
+
+  --color-border: 39 39 42;
+  --color-input: 39 39 42;
+  --color-ring: 212 212 216;
+
+  --color-chart-1: 129 140 248;
+  --color-chart-2: 244 114 182;
+  --color-chart-3: 74 222 128;
+  --color-chart-4: 251 191 36;
+  --color-chart-5: 248 113 113;
+}
+
+/* Global styles */
+* {
+  @apply border-zinc-200 dark:border-zinc-800;
 }
 
 html {
   scroll-behavior: smooth;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+body {
+  font-family: var(--font-sans);
+  background: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Component base styles */
+.btn {
+  @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-zinc-300;
+}
+
+.btn-primary {
+  @apply bg-zinc-900 text-zinc-50 hover:bg-zinc-900/90 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-50/90;
+}
+
+.btn-secondary {
+  @apply bg-zinc-100 text-zinc-900 hover:bg-zinc-100/80 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-800/80;
+}
+
+.btn-ghost {
+  @apply hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-50;
+}
+
+.card {
+  @apply rounded-lg border bg-white text-zinc-950 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50;
+}
+
+/* Loading and animation utilities */
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-900 bg-clip-text text-transparent dark:from-zinc-100 dark:via-zinc-300 dark:to-zinc-100;
 }

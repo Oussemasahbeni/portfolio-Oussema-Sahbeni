@@ -1,13 +1,5 @@
 {
-    "welcome": "Welcome!",
     "emailCopied": "Email copied to clipboard!",
-    "header": {
-        "aboutMe": "About Me",
-        "experience": "Experience",
-        "projects": "Projects",
-        "contact": "Contact",
-        "resume": "Resume"
-    },
     "introduction": {
         "title": "Hello there! my name is",
         "fullStackDeveloper": "Full-Stack Developer",
@@ -23,62 +15,138 @@
             "totalGithubFollowers": "Total Github Followers",
             "totalGithubRepos": "Total Github Repos",
             "areasForGrowth": "Areas for Growth",
-            "howMuchIBench": "How much I bench"
+            "howMuchIBench": "How much I bench",
+            "statsTitle": "By the Numbers",
+            "techStackTitle": "Technologies I Work With"
         },
         "experience": {
             "title": "Experience",
             "active": "Active",
             "skills": "Skills",
-            "endOfStudiesInternship": "End of Studies Internship",
-            "professionalInternship": "Professional Internship",
-            "introductoryInternship": "Introductory Internship",
-            "to": "to",
-            "insparkForgeDescription": {
-                "line1": "During my end-of-studies internship, I developed Inspark Forge, a talent-job matching and career-tracking application. The project was awarded the title of 'Best Project in the Department'.",
-                "line2": "Implemented skill evaluation with OpenAI's generative AI for personalized recommendations.",
-                "line3": "Integrated authentication and authorization using Keycloak.",
-                "line4": "Developed a recommendation system using NLP for job matching.",
-                "line5": "Created a real-time notification system with WebSockets and RabbitMQ.",
-                "line6": "Utilized NX for a monorepo Angular application, enhancing reusability.",
-                "line7": "Designed a scalable microservices architecture with Spring Boot.",
-                "line8": "Applied DDD principles for maintainable architecture.",
-                "line9": "Created a multi-language application for diverse users.",
-                "line10": "Managed file and image storage in Azure."
-            },
-            "cniDescription": "Developed a full-stack web app to streamline project management tasks",
-            "uibDescription": "Extensively observed financial transactions and account management."
+            "experiences": [
+                {
+                    "title": "Software Developer",
+                    "date": "Jan 2024 - Present",
+                    "company": "Inspark, Ariana, Tunisia",
+                    "description": [
+                        "Maintaining enterprise-grade Angular/Spring Boot apps with Keycloak SSO and modular component architecture",
+                        "Refactored core services into reusable modules using domain-driven design, increasing maintainability by 30%",
+                        "Integrated RabbitMQ and WebSocket for real-time messaging; deployed and monitored apps via AWS and Azure"
+                    ]
+                },
+                {
+                    "title": "Internship Trainee",
+                    "date": "Jan 2023 - Feb 2023",
+                    "company": "Centre National de l'Informatique, Tunisia",
+                    "description": [
+                        "Developed internal task management platform adopted by 3 departments; improved tracking efficiency by 50%",
+                        "Configured role-based access via Spring Security; optimized PostgreSQL queries to reduce API latency by 35%"
+                    ]
+                }
+            ]
         },
         "projects": {
             "title": "Projects",
-            "ViewSource": "View Source Code",
-            "InternshipReport": "Internship Report",
-            "webApplication": "Web Application",
-            "workoutBuddy": {
-                "description": "A MERN project with JWT for logging exercises, tracking workout history, and monitoring progress."
-            },
-            "insparkForge": {
-                "description": "A talent-job matching and career-tracking application with OpenAI's generative AI for personalized Skill Evaluation and Nlp for an efficient recommendation system."
-            },
-            "simonGame": {
-                "description": "A simple Simon Game built with HTML, CSS, and JavaScript."
-            },
-            "productsManager": {
-                "description": "A full-stack project with Angular and Spring Boot for managing products."
-            }
+            "ViewProject": "View Project",
+            "Private": "Private Project",
+            "keyFeatures": "Key Features",
+            "technologies": "Technologies",
+            "projectsList": [
+                {
+                    "name": "Sabeel Platform",
+                    "type": "Reintegration Platform",
+                    "description": "Reintegration platform for ex-prisoners, offering tailored resources and opportunities. Directed end-to-end development assisting 500+ ex-prisoners, improved job placement and training access by 40%.",
+                    "highlights": [
+                        "Assisted 500+ ex-prisoners with reintegration",
+                        "Improved job placement access by 40%",
+                        "End-to-end platform development",
+                        "Tailored resources and opportunities"
+                    ]
+                },
+                {
+                    "name": "One Saha Platform",
+                    "type": "Public Health Platform",
+                    "description": "Community-driven platform for public health data aggregation and engagement. Constructed backend with 10+ modular services, automated aggregation of 150+ monthly news entries using ML classification.",
+                    "highlights": [
+                        "10+ modular services using domain-oriented design principles",
+                        "Automated ML-powered news classification",
+                        "150+ monthly entries processed",
+                        "Community-driven health engagement"
+                    ]
+                },
+                {
+                    "name": "Inspark Forge",
+                    "type": "AI-Powered Talent Matching",
+                    "description": "AI-powered talent-matching platform for Tunisia. Designed scalable microservices architecture using Spring Boot and DDD, integrated OpenAI GPT-4o for intelligent skill evaluation.",
+                    "highlights": [
+                        "OpenAI GPT-4o integration for skill evaluation",
+                        "Scalable microservices with DDD",
+                        "AI-powered talent matching",
+                        "Tailored for Tunisian job market"
+                    ]
+                },
+                {
+                    "name": "Ministry of Agriculture Official Website",
+                    "type": "Government Web Platform",
+                    "description": "Official website of the Ministry of Agriculture of Tunisia. Provides comprehensive access to information, services, and news related to agriculture, fisheries, and rural development. Features secure authentication, advanced search capabilities, and rate limiting for optimal performance.",
+                    "highlights": [
+                        "Government-grade security implementation",
+                        "Elasticsearch-powered advanced search",
+                        "Rate limiting with Resilience4j",
+                        "Keycloak identity management"
+                    ]
+                },
+                {
+                    "name": "Konnect Spring Boot Starter",
+                    "type": "Open Source Library",
+                    "description": "A robust Spring Boot starter for integrating with the Konnect Payment Gateway. Handles low-level HTTP communication, authentication, and error handling with production-grade features like auto-configuration, webhook handling, and resilience patterns.",
+                    "highlights": [
+                        "Auto-configuration for Spring Boot",
+                        "Secure webhook handling",
+                        "Payment verification utilities",
+                        "Built-in rate limiting & retries",
+                        "Published to Maven Central"
+                    ]
+                },
+                {
+                    "name": "Keycloak Custom Theme with Keycloakify",
+                    "type": "Authentication UI Customization",
+                    "description": "Custom Keycloak login theme built with Keycloakify and Tailwind CSS. Modernizes the default Keycloak interface with responsive design, dark mode support, and customized email templates for enhanced user experience.",
+                    "highlights": [
+                        "Modern React-based login interface",
+                        "Responsive design with Tailwind CSS",
+                        "Dark mode support",
+                        "Custom email templates",
+                        "Keycloakify integration"
+                    ]
+                }
+            ]
         }
     },
     "contact": {
         "getInTouch": "Get in Touch!",
-        "letsBuild": "Let's Build",
-        "somethingTogether": "Something Together",
-        "description": " I will be happy to receive your contact if you want to talk about new opportunities. Write me, and I will reply as soon as I see your message.",
+        "email": {
+            "title": "Email",
+            "description": "Drop me a line anytime",
+            "address": "oussemasahbeni300@gmail.com"
+        },
+        "phone": {
+            "title": "Phone",
+            "description": "Call me directly",
+            "number": "+216 54 750 526"
+        },
+        "linkedin": {
+            "title": "LinkedIn",
+            "description": "Don't like emails? Send me a message instead👋"
+        },
+        "github": {
+            "title": "GitHub",
+            "description": "Check out my code and projects"
+        },
         "dontLikeMails": " Don't like mails ? Send me a",
         "messageInstead": " message instead👋"
     },
     "footer": {
-        "bye": "Bye! See you soon",
-        "madeWith": "Made with",
-        "and": "and",
         "rightsReserved": "All rights reserved."
     }
 }

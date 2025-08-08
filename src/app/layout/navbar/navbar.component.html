@@ -1,0 +1,172 @@
+<header
+  class="fixed top-0 z-50 h-16 w-full bg-white/80 backdrop-blur-md border-b border-zinc-200/50 dark:bg-zinc-950/80 dark:border-zinc-800/50"
+>
+  <div
+    class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-zinc-400/40 to-transparent dark:via-zinc-600/40"
+  ></div>
+  <nav
+    class="container relative mx-auto flex h-full w-full items-center justify-between px-6 lg:px-8"
+  >
+    <!-- Logo Section -->
+    <a
+      (click)="scrollTo('hero')"
+      class="flex items-center space-x-2 hover:opacity-80 transition-opacity cursor-pointer"
+      aria-label="Home"
+    >
+      <div
+        class="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-lg"
+      >
+        <span class="text-sm font-bold">O</span>
+      </div>
+      <span
+        class="hidden font-semibold text-zinc-900 dark:text-zinc-100 sm:block"
+        >Oussema</span
+      >
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center space-x-8">
+      <a
+        (click)="scrollTo('about_me')"
+        class="cursor-pointer text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+        aria-label="About me section"
+      >
+        <span class="text-blue-500 font-mono text-xs">1.0</span> About Me
+      </a>
+      <a
+        (click)="scrollTo('experience')"
+        class="cursor-pointer text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+        aria-label="Experience section"
+      >
+        <span class="text-blue-500 font-mono text-xs">2.0</span> Experience
+      </a>
+      <a
+        (click)="scrollTo('projects')"
+        class="cursor-pointer text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+        aria-label="Projects section"
+      >
+        <span class="text-blue-500 font-mono text-xs">3.0</span> Projects
+      </a>
+      <a
+        (click)="scrollTo('contact')"
+        class="cursor-pointer text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+        aria-label="Contact section"
+      >
+        <span class="text-blue-500 font-mono text-xs">4.0</span> Contact
+      </a>
+      <a
+        href="https://drive.google.com/file/d/1Fi4HlhgtdtgwcHB01ksroVMUxQd6PXMF/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 dark:text-blue-400 dark:border-blue-800 dark:hover:bg-blue-900/20 transition-colors"
+        aria-label="Download Resume"
+      >
+        <svg
+          class="w-4 h-4 mr-1"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+          />
+        </svg>
+        Resume
+      </a>
+    </div>
+
+    <!-- Right Section - Theme and Language -->
+    <div class="flex items-center gap-2">
+      <app-theme-toggler />
+      <app-language></app-language>
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="btn btn-ghost inline-flex size-9 flex-shrink-0 items-center justify-center rounded-lg md:hidden border border-zinc-200/50 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950 focus-visible:ring-offset-2 dark:border-zinc-800/50 dark:focus-visible:ring-zinc-300"
+        (click)="toggle()"
+        ngpButton
+      >
+        <svg
+          class="size-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Menu -->
+  <div
+    class="md:hidden"
+    [class.hidden]="!menuOpen()"
+    [class.block]="menuOpen()"
+  >
+    <div
+      class="px-6 py-4 bg-white/95 backdrop-blur-md border-t border-zinc-200/50 dark:bg-zinc-950/95 dark:border-zinc-800/50"
+    >
+      <div class="flex flex-col space-y-4">
+        <a
+          (click)="scrollTo('about_me'); toggle()"
+          class="cursor-pointer text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+          aria-label="About me section"
+        >
+          <span class="text-blue-500 font-mono text-xs">1.0</span> About Me
+        </a>
+        <a
+          (click)="scrollTo('experience'); toggle()"
+          class="cursor-pointer text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+          aria-label="Experience section"
+        >
+          <span class="text-blue-500 font-mono text-xs">2.0</span> Experience
+        </a>
+        <a
+          (click)="scrollTo('projects'); toggle()"
+          class="cursor-pointer text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+          aria-label="Projects section"
+        >
+          <span class="text-blue-500 font-mono text-xs">3.0</span> Projects
+        </a>
+        <a
+          (click)="scrollTo('contact'); toggle()"
+          class="cursor-pointer text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+          aria-label="Contact section"
+        >
+          <span class="text-blue-500 font-mono text-xs">4.0</span> Contact
+        </a>
+        <a
+          href="https://drive.google.com/file/d/1Fi4HlhgtdtgwcHB01ksroVMUxQd6PXMF/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 dark:text-blue-400 dark:border-blue-800 dark:hover:bg-blue-900/20 transition-colors w-fit"
+          aria-label="Download Resume"
+        >
+          <svg
+            class="w-4 h-4 mr-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            />
+          </svg>
+          Resume
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

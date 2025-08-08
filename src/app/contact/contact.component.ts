@@ -16,7 +16,7 @@ export class ContactComponent {
   private _translocoService = inject(TranslocoService);
 
   copyText() {
-    const text = 'oussemasahbeni300@gmail.com';
+    const text = this._translocoService.translate('contact.email.address');
     this.clipboard.copy(text);
     this.toastService.success(this._translocoService.translate('emailCopied'));
   }

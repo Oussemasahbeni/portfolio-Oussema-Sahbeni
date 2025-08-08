@@ -1,0 +1,8 @@
+<button
+  class="btn btn-ghost h-9 w-9 rounded-lg glass-effect border border-zinc-200/50 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950 focus-visible:ring-offset-2 dark:border-zinc-800/50 dark:focus-visible:ring-zinc-300 interactive-3d [&_svg]:size-4 [&_svg]:text-zinc-700 dark:[&_svg]:text-zinc-300"
+  (click)="toggleTheme()"
+  [title]="isDark() ? 'Switch to light mode' : 'Switch to dark mode'"
+  ngpButton
+>
+  <ng-icon [name]="isDark() ? 'radixSun' : 'radixMoon'" aria-hidden="true" />
+</button>

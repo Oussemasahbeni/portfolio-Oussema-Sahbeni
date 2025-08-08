@@ -1,0 +1,96 @@
+/* Language Component - Next.js Inspired Styles */
+
+[ngpMenu] {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  min-width: 8rem;
+  background: rgb(var(--color-popover));
+  border: 1px solid rgb(var(--color-border));
+  border-radius: var(--radius-md);
+  padding: 0.25rem;
+  z-index: 50;
+  box-shadow: var(--shadow-lg);
+  transform-origin: var(--ngp-menu-transform-origin);
+}
+
+[ngpMenu][data-enter] {
+  animation: menu-show 0.15s ease-out;
+}
+
+[ngpMenu][data-exit] {
+  animation: menu-hide 0.15s ease-in;
+}
+
+[ngpMenuItem] {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border-radius: var(--radius-sm);
+  min-width: 7rem;
+  text-align: start;
+  outline: none;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: rgb(var(--color-foreground));
+  position: relative;
+}
+
+[ngpMenuItem]:hover {
+  background-color: rgb(var(--color-accent));
+  color: rgb(var(--color-accent-foreground));
+}
+
+[ngpMenuItem][data-hover] {
+  background-color: rgb(var(--color-accent));
+  color: rgb(var(--color-accent-foreground));
+}
+
+[ngpMenuItem][data-press] {
+  background-color: rgb(var(--color-muted));
+  transform: scale(0.98);
+}
+
+[ngpMenuItem][data-focus-visible] {
+  outline: 2px solid rgb(var(--color-ring));
+  outline-offset: 1px;
+  z-index: 1;
+}
+
+/* Active language indicator */
+[ngpMenuItem].font-semibold {
+  font-weight: 600;
+  color: rgb(var(--color-primary));
+}
+
+[ngpMenuItem].font-semibold::after {
+  content: "✓";
+  position: absolute;
+  right: 0.75rem;
+  color: rgb(var(--color-primary));
+}
+
+@keyframes menu-show {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(-4px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes menu-hide {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95) translateY(-4px);
+  }
+}

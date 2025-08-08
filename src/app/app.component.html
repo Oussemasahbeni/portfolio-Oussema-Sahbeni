@@ -1,11 +1,16 @@
-<div class="dark:bg-main h-full bg-slate-100">
-  <div class="bg-linear-to-b from-violet-600/15 via-transparent">
-    <app-header />
-    <app-home />
+<div
+  class="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950"
+>
+  <app-navbar />
+  <app-hero class="min-h-screen" />
+  <app-about-me
+    id="about_me"
+    class="sm:min-h-screen md:min-h-screen flex flex-col items-center"
+  />
+  <app-experience class="sm:min-h-screen md:min-h-screen" />
+  <app-projects id="projects" class="sm:min-h-screen md:min-h-screen" />
+  <div class="flex flex-col w-full"></div>
+  <app-contact id="contact" />
 
-    <app-projects id="projects" />
-    <app-contact id="contact" />
-
-    <app-footer />
-  </div>
+  <app-footer />
 </div>
