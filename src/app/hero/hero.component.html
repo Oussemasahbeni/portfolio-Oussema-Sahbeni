@@ -1,7 +1,7 @@
 <div
-  class="max-w-[85rem] text-left flex flex-col lg:flex-row justify-start mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10"
+  class="max-w-340 text-left flex flex-col lg:flex-row justify-start mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10"
   id="about"
-  *transloco="let t; read: 'introduction'"
+  *transloco="let t; prefix: 'introduction'"
 >
   <div class="flex mt-44 w-full flex-col lg:flex-row">
     <!-- particles -->
@@ -19,7 +19,7 @@
         Oussema Sahbeni
       </h1>
       <h1
-        class="bg-clip-text w-full font-bold text-xl md:text-5xl mt-4 bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent typewriter inline-block"
+        class="bg-clip-text w-full font-bold text-xl md:text-5xl mt-4 bg-linear-to-tl from-blue-600 to-violet-600 text-transparent typewriter inline-block"
       >
         {{ t("fullStackDeveloper") }}
       </h1>
@@ -121,7 +121,7 @@
   </div>
 
   <div
-    [style.opacity]="showArrow ? '1' : '0'"
+    [style.opacity]="showArrow() ? '1' : '0'"
     class="absolute bottom-11 left-0 right-0 hidden md:flex justify-center z-50"
     id="arrow"
   >

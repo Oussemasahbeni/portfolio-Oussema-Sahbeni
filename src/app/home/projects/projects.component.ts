@@ -1,17 +1,31 @@
-import { NgOptimizedImage } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { TranslocoModule } from '@jsverse/transloco';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
-    selector: 'app-projects',
-    imports: [TranslocoModule],
-    templateUrl: './projects.component.html'
+  selector: 'app-projects',
+  imports: [TranslocoModule],
+  templateUrl: './projects.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsComponent {
-  responsiveOptions: any[] | undefined;
-  projects: any[] = [
+  responsiveOptions = signal<any[]>([
+    {
+      breakpoint: '1199px',
+      numVisible: 1,
+      numScroll: 1,
+    },
+    {
+      breakpoint: '991px',
+      numVisible: 2,
+      numScroll: 1,
+    },
+    {
+      breakpoint: '767px',
+      numVisible: 1,
+      numScroll: 1,
+    },
+  ]);
+  projects = signal([
     {
       name: 'Workout Buddy',
       type: 'home.projects.webApplication',
@@ -47,65 +61,5 @@ export class ProjectsComponent {
       github: 'https://github.com/Oussemasahbeni/restApiFront',
       image: '/product manager/landing.webp',
     },
-  ];
-
-  ngOnInit() {
-    this.responsiveOptions = [
-      {
-        breakpoint: '1199px',
-        numVisible: 1,
-        numScroll: 1,
-      },
-      {
-        breakpoint: '991px',
-        numVisible: 2,
-        numScroll: 1,
-      },
-      {
-        breakpoint: '767px',
-        numVisible: 1,
-        numScroll: 1,
-      },
-    ];
-  }
-
-  ngAfterViewInit() {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.fromTo(
-      '#card',
-      {
-        y: 100,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        scrollTrigger: {
-          trigger: '#card',
-          start: 'top 75%',
-          once: true,
-        },
-      }
-    );
-
-    gsap.fromTo(
-      '#projects',
-      {
-        y: 100,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        scrollTrigger: {
-          trigger: '#projects',
-          start: 'top 75%',
-          once: true,
-        },
-      }
-    );
-  }
+  ]);
 }

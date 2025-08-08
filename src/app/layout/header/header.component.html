@@ -5,7 +5,7 @@
   *transloco="let t; prefix: 'header'"
 >
   <nav
-    class="mt-2 relative max-w-[85rem] bg-main w-full border-4 rounded-[36px] mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto border-gray-700"
+    class="mt-2 relative max-w-340 bg-main w-full border-4 rounded-[36px] mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto border-gray-700"
     aria-label="Global Navigation"
   >
     <div class="flex items-center justify-between">
@@ -19,13 +19,13 @@
       <div class="md:hidden">
         <button
           type="button"
-          class="hs-collapse-toggle w-8 h-8 flex justify-center items-center text-sm font-semibold rounded-full border disabled:opacity-50 disabled:pointer-events-none text-white border-gray-700 hover:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-600"
+          class="hs-collapse-toggle w-8 h-8 flex justify-center items-center text-sm font-semibold rounded-full border disabled:opacity-50 disabled:pointer-events-none text-white border-gray-700 hover:bg-gray-700 focus:outline-hidden focus:ring-1 focus:ring-gray-600"
           data-hs-collapse="#navbar-collapse-with-animation"
           aria-controls="navbar-collapse-with-animation"
           aria-label="Toggle navigation"
         >
           <svg
-            class="hs-collapse-open:hidden flex-shrink-0 w-4 h-4"
+            class="hs-collapse-open:hidden shrink-0 w-4 h-4"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -41,7 +41,7 @@
             <line x1="3" x2="21" y1="18" y2="18" />
           </svg>
           <svg
-            class="hs-collapse-open:block hidden flex-shrink-0 w-4 h-4"
+            class="hs-collapse-open:block hidden shrink-0 w-4 h-4"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -120,23 +120,23 @@
           class="p-3 pe-5 block mr-1 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
           [formControl]="langControl"
         >
-          @for (lang of availableLangs; track $index){
+          @for (lang of availableLangs(); track $index){
 
-          <option value="{{ lang }}" [selected]="lang === activeLang">
+          <option value="{{ lang }}" [selected]="lang === activeLang()">
             {{ lang | uppercase }}
           </option>
           }
         </select>
 
         <!-- Dark mode -->
-        @if(!isDarkMode){
+        @if(!isDarkMode()){
         <button
           type="button"
           class="group flex items-center text-white hover:text-white-600 font-medium"
           (click)="toggleDarkMode()"
         >
           <svg
-            class="flex-shrink-0 size-7"
+            class="shrink-0 size-7"
             xmlns="http://www.w3.org/2000/svg"
             width="30"
             height="30"
@@ -152,14 +152,14 @@
             <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
           </svg>
         </button>
-        } @if(isDarkMode){
+        } @if(isDarkMode()){
         <button
           type="button"
           class="group flex items-center text-white hover:text-white-600 font-medium"
           (click)="toggleDarkMode()"
         >
           <svg
-            class="flex-shrink-0 size-7"
+            class="shrink-0 size-7"
             xmlns="http://www.w3.org/2000/svg"
             width="30"
             height="30"

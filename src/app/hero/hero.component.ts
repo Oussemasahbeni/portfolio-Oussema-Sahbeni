@@ -1,20 +1,26 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  signal,
+} from '@angular/core';
 import { TranslocoModule } from '@jsverse/transloco';
 @Component({
-  selector: 'app-about',
+  selector: 'app-hero',
   imports: [NgOptimizedImage, TranslocoModule],
-  templateUrl: './introduction.component.html',
-  styleUrl: './introduction.component.css',
+  templateUrl: './hero.component.html',
+  styleUrl: './hero.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class IntroductionComponent {
+export class HeroComponent {
   particlesJS: any;
 
-  showArrow = true;
+  showArrow = signal(true);
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
-    this.showArrow = window.scrollY === 0;
+    this.showArrow.set(window.scrollY === 0);
   }
 
   ngOnInit() {

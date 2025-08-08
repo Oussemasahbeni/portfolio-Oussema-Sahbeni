@@ -1,27 +1,34 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
-import { ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 import { UpperCasePipe } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  inject,
+  signal,
+} from '@angular/core';
+import { ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 @Component({
-    selector: 'app-header',
-    imports: [UpperCasePipe, TranslocoModule, ReactiveFormsModule],
-    templateUrl: './header.component.html',
-    styleUrl: './header.component.css'
+  selector: 'app-header',
+  imports: [UpperCasePipe, TranslocoModule, ReactiveFormsModule],
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
   private _translocoService = inject(TranslocoService);
 
-  availableLangs = ['en', 'fr'];
-  activeLang = localStorage.getItem('activeLang') ?? 'en';
-  isDarkMode: boolean;
+  availableLangs = signal(['en', 'fr']);
+  activeLang = signal(localStorage.getItem('activeLang') ?? 'en');
+  isDarkMode = signal<boolean>(localStorage.getItem('theme') === 'dark');
 
-  flagCodes: any;
+  flagCodes = signal<any>({});
 
-  langControl: UntypedFormControl = new UntypedFormControl(this.activeLang);
+  langControl: UntypedFormControl = new UntypedFormControl(this.activeLang());
 
   constructor() {
-    this.isDarkMode = localStorage.getItem('theme') === 'dark' ? true : false;
+    // No need to initialize signals in constructor anymore
   }
   ngOnInit(): void {
     this.langControl.valueChanges.subscribe((lang: string) => {
@@ -31,15 +38,16 @@ export class HeaderComponent implements OnInit {
     this.updateThemePreference();
 
     // Set the country iso codes for languages for flags
-    this.flagCodes = {
+    this.flagCodes.set({
       en: 'gb',
       fr: 'fr',
-    };
+    });
   }
 
   changeLang(lang: string): void {
     localStorage.setItem('activeLang', lang);
     this._translocoService.setActiveLang(lang);
+    this.activeLang.set(lang);
   }
 
   private updateThemePreference(): void {
@@ -70,8 +78,8 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleDarkMode(): void {
-    this.isDarkMode = !this.isDarkMode;
-    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
+    this.isDarkMode.set(!this.isDarkMode());
+    localStorage.setItem('theme', this.isDarkMode() ? 'dark' : 'light');
     this.updateThemePreference();
   }
 

@@ -20,7 +20,6 @@ export const appConfig: ApplicationConfig = {
       config: {
         availableLangs: ['en', 'fr'],
         defaultLang: localStorage.getItem('activeLang') ?? 'en',
-        // Remove this option if your application doesn't support changing language in runtime.
         reRenderOnLangChange: true,
         prodMode: !isDevMode(),
       },
@@ -30,7 +29,6 @@ export const appConfig: ApplicationConfig = {
       const translocoService = inject(TranslocoService);
       const defaultLang = translocoService.getDefaultLang();
       translocoService.setActiveLang(defaultLang);
-
       return firstValueFrom(translocoService.load(defaultLang));
     }),
   ],

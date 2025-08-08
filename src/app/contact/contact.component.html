@@ -1,9 +1,10 @@
 <!-- ========== MAIN CONTENT ========== -->
 <main
   id="content"
+  data-aos="fade-up"
   role="main"
   class="max-w-3xl px-4 sm:px-6 lg:px-8 flex flex-col justify-center sm:items-center mx-auto w-full"
-  *transloco="let t; read: 'contact'"
+  *transloco="let t; prefix: 'contact'"
 >
   <div class="text-center py-8 px-4 sm:px-6 lg:px-8">
     <h1
@@ -12,7 +13,7 @@
     >
       <span class="text-blue-500">4.0</span> {{ t("getInTouch") }}
       <div
-        class="absolute inset-0 w-full h-full bg-backgroundrgb [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"
+        class="absolute inset-0 w-full h-full bg-backgroundrgb mask-[radial-gradient(350px_200px_at_top,transparent_20%,white)]"
       ></div>
     </h1>
     <!-- Title -->
@@ -22,7 +23,7 @@
       >
         {{ t("letsBuild") }}
         <span
-          class="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent"
+          class="bg-clip-text bg-linear-to-tl from-blue-600 to-violet-600 text-transparent"
           >{{ t("somethingTogether") }}</span
         >
       </h1>
@@ -41,7 +42,7 @@
         id="hs-clipboard-basic"
         type="button"
         (click)="copyText()"
-        class="relative group p-2 ps-3 inline-flex items-center gap-x-2 text-sm font-mono rounded-lg border disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 focus:outline-none focus:ring-1 dark:focus:ring-gray-600"
+        class="relative group p-2 ps-3 inline-flex items-center gap-x-2 text-sm font-mono rounded-lg border disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 focus:outline-hidden focus:ring-1 dark:focus:ring-gray-600"
       >
         $ oussemashabeni300&#64;gmail.com
         <span
@@ -51,7 +52,7 @@
             type="button"
             title="Copy to clipboard"
             aria-label="Copy to clipboard"
-            class="js-clipboard p-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border disabled:opacity-50 disabled:pointer-events-none bg-slate-900 border-gray-700 dark:text-white hover:bg-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-600"
+            class="js-clipboard p-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border disabled:opacity-50 disabled:pointer-events-none bg-slate-900 border-gray-700 dark:text-white hover:bg-gray-800 focus:outline-hidden focus:ring-1 focus:ring-gray-600"
             data-clipboard-target="#hs-clipboard-basic"
             data-clipboard-action="copy"
             data-clipboard-success-text="Copied"
