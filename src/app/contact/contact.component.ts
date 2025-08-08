@@ -1,18 +1,18 @@
+import { Clipboard } from '@angular/cdk/clipboard';
 import { Component, inject } from '@angular/core';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
+import { HotToastService } from '@ngxpert/hot-toast';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Clipboard } from '@angular/cdk/clipboard';
-import { HotToastService } from '@ngneat/hot-toast';
-import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 @Component({
-    selector: 'app-contact',
-    imports: [TranslocoModule],
-    templateUrl: './contact.component.html',
-    styleUrl: './contact.component.css'
+  selector: 'app-contact',
+  imports: [TranslocoModule],
+  templateUrl: './contact.component.html',
+  styleUrl: './contact.component.css',
 })
 export class ContactComponent {
-  constructor(private clipboard: Clipboard) {}
+  private clipboard = inject(Clipboard);
 
   private toastService = inject(HotToastService);
   private _translocoService = inject(TranslocoService);

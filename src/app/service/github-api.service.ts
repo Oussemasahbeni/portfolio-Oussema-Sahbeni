@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { shareReplay } from 'rxjs';
 
 
@@ -8,8 +8,8 @@ import { shareReplay } from 'rxjs';
   providedIn: 'root'
 })
 export class GithubApiService {
+  private http = inject(HttpClient);
 
-  constructor(private http: HttpClient) { }
 
 
 

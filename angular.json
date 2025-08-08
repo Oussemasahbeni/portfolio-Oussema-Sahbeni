@@ -16,9 +16,6 @@
             "outputPath": "dist/portfolio",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -29,7 +26,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/@ngneat/hot-toast/src/styles/styles.css"
+              "node_modules/@ngxpert/hot-toast/src/styles/styles.css"
             ],
             "scripts": [
               "node_modules/preline/preline.js"
@@ -80,14 +77,12 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
             ],
             "styles": [
               "src/styles.css"

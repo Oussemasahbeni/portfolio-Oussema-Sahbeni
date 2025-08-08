@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 import { UpperCasePipe } from '@angular/common';
@@ -10,6 +10,8 @@ import { UpperCasePipe } from '@angular/common';
     styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit {
+  private _translocoService = inject(TranslocoService);
+
   availableLangs = ['en', 'fr'];
   activeLang = localStorage.getItem('activeLang') ?? 'en';
   isDarkMode: boolean;
@@ -18,7 +20,7 @@ export class HeaderComponent implements OnInit {
 
   langControl: UntypedFormControl = new UntypedFormControl(this.activeLang);
 
-  constructor(private _translocoService: TranslocoService) {
+  constructor() {
     this.isDarkMode = localStorage.getItem('theme') === 'dark' ? true : false;
   }
   ngOnInit(): void {

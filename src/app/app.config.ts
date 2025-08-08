@@ -1,18 +1,20 @@
+import { provideHttpClient } from '@angular/common/http';
 import {
-  APP_INITIALIZER,
   ApplicationConfig,
   inject,
   isDevMode,
+  provideAppInitializer,
+  provideZonelessChangeDetection,
 } from '@angular/core';
-import { provideHttpClient } from '@angular/common/http';
-import { provideHotToastConfig } from '@ngneat/hot-toast';
-import { TranslocoHttpLoader } from './transloco-loader';
 import { provideTransloco, TranslocoService } from '@jsverse/transloco';
+import { provideHotToastConfig } from '@ngxpert/hot-toast';
 import { firstValueFrom } from 'rxjs';
+import { TranslocoHttpLoader } from './transloco-loader';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(),
+    provideZonelessChangeDetection(),
     provideHotToastConfig(),
     provideTransloco({
       config: {
@@ -24,16 +26,12 @@ export const appConfig: ApplicationConfig = {
       },
       loader: TranslocoHttpLoader,
     }),
-    {
-      // Preload the default language before the app starts to prevent empty/jumping content
-      provide: APP_INITIALIZER,
-      useFactory: () => {
-        const translocoService = inject(TranslocoService);
-        const defaultLang = translocoService.getDefaultLang();
-        translocoService.setActiveLang(defaultLang);
-        return () => firstValueFrom(translocoService.load(defaultLang));
-      },
-      multi: true,
-    },
+    provideAppInitializer(() => {
+      const translocoService = inject(TranslocoService);
+      const defaultLang = translocoService.getDefaultLang();
+      translocoService.setActiveLang(defaultLang);
+
+      return firstValueFrom(translocoService.load(defaultLang));
+    }),
   ],
 };
