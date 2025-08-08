@@ -1,0 +1,40 @@
+{
+    "name": "Oussema Sahbeni - Full Stack Developer",
+    "short_name": "Oussema Sahbeni",
+    "description": "Portfolio of Oussema Sahbeni, Expert Full Stack Developer specializing in Angular, Spring Boot, and modern web technologies",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#3b82f6",
+    "orientation": "portrait-primary",
+    "lang": "en",
+    "scope": "/",
+    "icons": [
+        {
+            "src": "logo-oussema.webp",
+            "sizes": "192x192",
+            "type": "image/webp",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "logo-oussema.webp",
+            "sizes": "512x512",
+            "type": "image/webp",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "portfolio",
+        "developer",
+        "technology",
+        "education"
+    ],
+    "screenshots": [
+        {
+            "src": "oussema.webp",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "label": "Oussema Sahbeni Portfolio Homepage"
+        }
+    ]
+}

@@ -3,9 +3,11 @@ import {
   ChangeDetectionStrategy,
   Component,
   DOCUMENT,
-  PLATFORM_ID,
   inject,
   model,
+  OnDestroy,
+  OnInit,
+  PLATFORM_ID,
 } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
 import { LanguageComponent } from '../language/language.component';
@@ -17,7 +19,7 @@ import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
   templateUrl: './navbar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit, OnDestroy {
   /**
    * Determine the platform.
    */
@@ -28,6 +30,30 @@ export class NavbarComponent {
    * Whether the mobile menu is open.
    */
   readonly menuOpen = model(false);
+
+  private clickListener?: (event: Event) => void;
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platform)) {
+      // Close mobile menu when clicking outside
+      this.clickListener = (event: Event) => {
+        const target = event.target as HTMLElement;
+        const navbar = this.document.querySelector('app-navbar');
+
+        if (this.menuOpen() && navbar && !navbar.contains(target)) {
+          this.menuOpen.set(false);
+        }
+      };
+
+      this.document.addEventListener('click', this.clickListener);
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.clickListener) {
+      this.document.removeEventListener('click', this.clickListener);
+    }
+  }
 
   toggle(): void {
     this.menuOpen.update((open) => !open);
