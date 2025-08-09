@@ -17,6 +17,7 @@ import { ExperienceComponent } from './experience/experience.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { BackToTopComponent } from "./layout/back-to-top/back-to-top.component";
 
 declare const gtag: Function;
 @Component({
@@ -29,7 +30,8 @@ declare const gtag: Function;
     AboutMeComponent,
     ExperienceComponent,
     ProjectsComponent,
-  ],
+    BackToTopComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
