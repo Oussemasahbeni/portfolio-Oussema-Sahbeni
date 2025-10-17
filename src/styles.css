@@ -1,4 +1,3 @@
-/* Modern Next.js-inspired Design System */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
 @import "tailwindcss";
 @import "aos/dist/aos.css";
@@ -19,7 +18,6 @@
   --font-mono: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, "Cascadia Code",
     "Roboto Mono", Consolas, "Courier New", monospace;
 
-  /* Next.js-inspired color palette - Light Mode */
   --color-background: 255 255 255;
   --color-foreground: 9 9 11;
   --color-card: 255 255 255;
@@ -132,7 +130,6 @@
   }
 }
 
-/* Dark mode - Next.js inspired dark theme */
 .dark {
   --color-background: 9 9 11;
   --color-foreground: 250 250 250;
