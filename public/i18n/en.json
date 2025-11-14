@@ -1,5 +1,14 @@
 {
     "emailCopied": "Email copied to clipboard!",
+    "navbar": {
+        "aboutMe": "About Me",
+        "experience": "Experience",
+        "projects": "Projects",
+        "contact": "Contact",
+        "resume": "Resume",
+        "downloadResume": "Download Resume",
+        "settings": "Settings"
+    },
     "introduction": {
         "title": "Hello there! I'm",
         "fullStackDeveloper": "Fullstack Developer",

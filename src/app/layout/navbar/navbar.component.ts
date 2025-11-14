@@ -9,13 +9,19 @@ import {
   OnInit,
   PLATFORM_ID,
 } from '@angular/core';
+import { TranslocoDirective } from '@jsverse/transloco';
 import { NgpButton } from 'ng-primitives/button';
 import { LanguageComponent } from '../language/language.component';
 import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
 
 @Component({
   selector: 'app-navbar',
-  imports: [NgpButton, ThemeToggleComponent, LanguageComponent],
+  imports: [
+    NgpButton,
+    ThemeToggleComponent,
+    LanguageComponent,
+    TranslocoDirective,
+  ],
   templateUrl: './navbar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

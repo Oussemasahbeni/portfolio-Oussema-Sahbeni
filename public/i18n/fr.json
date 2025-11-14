@@ -1,5 +1,14 @@
 {
     "emailCopied": "Email copié dans le presse-papiers !",
+    "navbar": {
+        "aboutMe": "À Propos",
+        "experience": "Expérience",
+        "projects": "Projets",
+        "contact": "Contact",
+        "resume": "CV",
+        "downloadResume": "Télécharger le CV",
+        "settings": "Paramètres"
+    },
     "introduction": {
         "title": "Salut ! Je suis",
         "fullStackDeveloper": "Développeur Fullstack",

@@ -22,7 +22,7 @@ export class ProjectsComponent {
       description:
         'Reintegration platform for ex-prisoners, offering tailored resources and opportunities. Directed end-to-end development assisting 500+ ex-prisoners, improved job placement and training access by 40%.',
       techs: ['angular', 'spring', 'postgresql', 'keycloak', 'docker', 'aws'],
-      website: null, // Private project - no public link
+      website: null,
       highlights: [
         'Assisted 500+ ex-prisoners with reintegration',
         'Improved job placement access by 40%',
@@ -71,7 +71,7 @@ export class ProjectsComponent {
         'elasticsearch',
         'resilience4j',
       ],
-      website: 'https://dev-front-agriculture.inspark.tn/home',
+      website: 'https://staging-agri.agrinet.tn/home',
       highlights: [
         'Government-grade security implementation',
         'Elasticsearch-powered advanced search',
@@ -132,7 +132,7 @@ export class ProjectsComponent {
         projectsData.map((project: any, index: number) => {
           const originalProject = currentProjects[index];
           return {
-            ...originalProject, // Keep all original properties including website, techs, etc.
+            ...originalProject,
             name: project.name,
             type: project.type,
             description: project.description,
