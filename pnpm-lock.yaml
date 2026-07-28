@@ -63,8 +63,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       cuelume:
-        specifier: ^0.1.2
-        version: 0.1.2
+        specifier: ^0.2.1
+        version: 0.2.1
       express:
         specifier: ^5.1.0
         version: 5.2.1
@@ -4451,8 +4451,8 @@ packages:
     resolution: {integrity: sha512-7D2EPVltRrsTkhpQmksIu+LxeWAIEk6wRDMJ1qljlv+CKHJM+cJLlfhWIzNA44eAsHXSNe3+vO6DW1yCYx8SuQ==}
     engines: {node: '>=20'}
 
-  cuelume@0.1.2:
-    resolution: {integrity: sha512-VxL0k9l1fyKGot3VKM+wm5Xd2K75fVeBHdNTrR1EHiqKRtD6S5Dxy/vY7hwl9gXp3QT/TIywFXUos77n39YZVQ==}
+  cuelume@0.2.1:
+    resolution: {integrity: sha512-UFN5GtPRhnkL55r5rz7oalgy72XTtV50QqOec3+wHer0O1hlwOteej99dlRxeFX2ViLUD/CpCu47v5XCTa2tEQ==}
 
   data-urls@6.0.1:
     resolution: {integrity: sha512-euIQENZg6x8mj3fO6o9+fOW8MimUI4PpD/fZBhJfeioZVy9TUpM4UY7KjQNVZFlqwJ0UdzRDzkycB997HEq1BQ==}
@@ -12873,7 +12873,7 @@ snapshots:
       css-tree: 3.2.1
       lru-cache: 11.5.2
 
-  cuelume@0.1.2: {}
+  cuelume@0.2.1: {}
 
   data-urls@6.0.1:
     dependencies:

@@ -24,7 +24,7 @@ import { ContentMetadata } from '../../../models/content-metadata';
       >
         <div hlmCardHeader>
           <div class="mb-2 flex items-start justify-between">
-            <span class="text-muted-foreground font-mono text-xs">
+            <span class="text-muted-foreground text-xs">
               {{ article.date | date: 'mediumDate' }}
             </span>
             <ng-icon name="lucideArrowRight" />

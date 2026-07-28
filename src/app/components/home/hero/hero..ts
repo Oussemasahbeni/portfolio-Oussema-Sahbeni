@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideArrowRight, lucideMail } from '@ng-icons/lucide';
 import { radixGithubLogo, radixLinkedinLogo } from '@ng-icons/radix-icons';
@@ -15,7 +14,7 @@ interface SocialLink {
 
 @Component({
   selector: 'app-hero',
-  imports: [HlmButtonImports, RouterLink, NgIcon, SpotifyWidget],
+  imports: [HlmButtonImports, NgIcon, SpotifyWidget],
   providers: [
     provideIcons({
       lucideArrowRight,

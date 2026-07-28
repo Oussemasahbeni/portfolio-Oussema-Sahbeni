@@ -55,7 +55,7 @@ export class BackToTop {
   }
 
   scrollToTop(): void {
-    play('page');
+    play('sparkle');
     this.viewportScroller.scrollToPosition([0, 0], { behavior: 'smooth' });
   }
 }

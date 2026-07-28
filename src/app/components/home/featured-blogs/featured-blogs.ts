@@ -8,7 +8,7 @@ import { FeaturedBlogPreview } from './featured-blog-preview';
   imports: [FeaturedBlogPreview],
   template: ` <div class="space-y-4 text-center">
       <div class="mb-10">
-        <div class="text-muted-foreground flex items-center gap-3 font-mono text-xs tracking-widest uppercase">
+        <div class="text-muted-foreground flex items-center gap-3 text-xs tracking-widest uppercase">
           <span>Featured Posts</span>
           <span class="bg-border h-px flex-1"></span>
         </div>

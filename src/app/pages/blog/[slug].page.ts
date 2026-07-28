@@ -104,7 +104,10 @@ export const routeMeta: RouteMeta = {
           }
 
           <div #contentRef>
-            <analog-markdown class="prose dark:prose-invert max-w-none pt-8 sm:pt-12" [content]="article.content" />
+            <analog-markdown
+              class="prose dark:prose-invert max-w-none pt-8 font-sans sm:pt-12"
+              [content]="article.content"
+            />
           </div>
         </article>
 

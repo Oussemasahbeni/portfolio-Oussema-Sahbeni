@@ -1,7 +1,7 @@
 <section>
   <!-- Section Header -->
   <div class="mb-10">
-    <div class="text-muted-foreground flex items-center gap-3 font-mono text-xs tracking-widest uppercase">
+    <div class="text-muted-foreground flex items-center gap-3 text-xs tracking-widest uppercase">
       <span>About Me</span>
       <span class="bg-border h-px flex-1"></span>
     </div>
@@ -61,7 +61,7 @@
 
   <!-- Tech Stack -->
   <div class="mt-14">
-    <div class="text-muted-foreground mb-6 flex items-center gap-3 font-mono text-xs tracking-widest uppercase">
+    <div class="text-muted-foreground mb-6 flex items-center gap-3 text-xs tracking-widest uppercase">
       <span>Tech I use</span>
       <span class="bg-border h-px flex-1"></span>
     </div>
@@ -70,7 +70,7 @@
       @for (tech of techStack(); track tech.name) {
         <button type="button" hlmBtn variant="secondary" [attr.aria-label]="tech.name">
           <ng-icon [name]="tech.icon" />
-          <span class="text-muted-foreground font-mono">{{ tech.name }}</span>
+          <span class="text-muted-foreground">{{ tech.name }}</span>
         </button>
       }
     </div>

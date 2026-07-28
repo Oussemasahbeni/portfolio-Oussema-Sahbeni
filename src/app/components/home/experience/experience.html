@@ -1,7 +1,7 @@
 <section>
   <!-- Section Header -->
   <div class="mb-12">
-    <div class="flex items-center gap-3 font-mono text-xs tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
+    <div class="flex items-center gap-3 text-xs tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
       <span>Experience</span>
       <span class="h-px flex-1 bg-zinc-200 dark:bg-zinc-800"></span>
     </div>
@@ -14,7 +14,7 @@
         class="grid gap-2 border-t border-zinc-200 py-8 first:border-t-0 first:pt-0 sm:grid-cols-[9rem_1fr] sm:gap-8 dark:border-zinc-800"
       >
         <!-- Date -->
-        <div class="text-foreground pt-1 font-mono text-xs sm:text-right">
+        <div class="text-foreground pt-1 text-xs sm:text-right">
           {{ item.date }}
         </div>
 
@@ -61,7 +61,7 @@
           @if (item.skills && item.skills!.length > 0) {
             <div class="mt-4 flex flex-wrap items-center gap-1.5">
               @for (skill of item.skills; track skill) {
-                <span hlmBadge variant="secondary" class="font-mono">
+                <span hlmBadge variant="secondary">
                   {{ skill }}
                 </span>
               }
