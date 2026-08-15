@@ -4,7 +4,6 @@ import { lucideArrowRight, lucideMail } from '@ng-icons/lucide';
 import { radixGithubLogo, radixLinkedinLogo } from '@ng-icons/radix-icons';
 import { HlmButtonImports } from '@spartan-ng/helm/button';
 import { GITHUB_LINK, LINKEDIN_LINK } from '../../../core/constants';
-import { SpotifyWidget } from '../../../shared/components/spotifty-widget/spotify-widget';
 
 interface SocialLink {
   label: string;
@@ -14,7 +13,7 @@ interface SocialLink {
 
 @Component({
   selector: 'app-hero',
-  imports: [HlmButtonImports, NgIcon, SpotifyWidget],
+  imports: [HlmButtonImports, NgIcon],
   providers: [
     provideIcons({
       lucideArrowRight,
