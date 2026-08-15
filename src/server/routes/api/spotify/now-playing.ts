@@ -8,7 +8,7 @@ const SPOTIFY_REFRESH_TOKEN = process.env['SPOTIFY_REFRESH_TOKEN'];
 const NOW_PLAYING_ENDPOINT = 'https://api.spotify.com/v1/me/player/currently-playing';
 const TOKEN_ENDPOINT = 'https://accounts.spotify.com/api/token';
 
-async function getAccessToken() {
+async function getAccessToken(): Promise<SpotifyTokenResponse> {
   if (!SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET || !SPOTIFY_REFRESH_TOKEN) {
     throw new Error('Spotify credentials not configured');
   }
@@ -27,9 +27,15 @@ async function getAccessToken() {
     }),
   });
 
-  return response.json() as Promise<SpotifyTokenResponse>;
-}
+  const data = await response.json();
+  console.log('Spotify token response:', response.status, data);
 
+  if (!response.ok) {
+    throw new Error(`Spotify token error: ${data.error} - ${data.error_description}`);
+  }
+
+  return data as SpotifyTokenResponse;
+}
 async function getNowPlaying() {
   const { access_token } = await getAccessToken();
 

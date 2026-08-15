@@ -49,11 +49,11 @@
   <!-- Stats -->
   <div class="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
     @for (stat of stats(); track stat.label) {
-      <div class="border-border bg-card/40 flex flex-col gap-2 rounded-xl border p-4">
+      <div class="border-border bg-card/40 flex flex-col gap-2 rounded-xl border p-3 sm:p-4">
         <ng-icon class="text-muted-foreground" size="1.15rem" [name]="stat.icon" />
-        <div class="mt-1 flex items-center gap-2">
-          <span class="text-foreground text-2xl font-bold tabular-nums">{{ stat.value }}</span>
-          <span class="text-muted-foreground text-sm">{{ stat.label }}</span>
+        <div class="mt-1 flex flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-2">
+          <span class="text-foreground text-xl font-bold tabular-nums sm:text-2xl">{{ stat.value }}</span>
+          <span class="text-muted-foreground text-xs sm:text-sm">{{ stat.label }}</span>
         </div>
       </div>
     }
