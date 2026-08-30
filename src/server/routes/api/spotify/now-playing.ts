@@ -28,7 +28,6 @@ async function getAccessToken(): Promise<SpotifyTokenResponse> {
   });
 
   const data = await response.json();
-  console.log('Spotify token response:', response.status, data);
 
   if (!response.ok) {
     throw new Error(`Spotify token error: ${data.error} - ${data.error_description}`);
