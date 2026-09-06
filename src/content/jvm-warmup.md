@@ -2,7 +2,7 @@
 title: From Bytecode to AOT Cache, Part 2 - Warmup, Why the App Is Still Slow After "Started"
 slug: jvm-warmup
 description: Part 2 of my journey into JVM startup. The interpreter, the JIT compiler, C1 and C2, tiered compilation, and why the first requests after a deploy are the slowest.
-date: 2026-09-20
+date: 2026-09-04
 tags: ['Java', 'JVM', 'Performance', 'Spring Boot']
 attributes:
   author: Oussema Sahbeni
@@ -81,3 +81,11 @@ That should sound familiar. It is exactly the conclusion of part 1, just one lay
 So, same question as last time: if the result is the same every time, why not do the work once, save it, and reuse it?
 
 The JVM has been quietly answering that question for twenty years. The answer started with CDS, that mysterious "shared objects file" from the class-loading log in part 1, and it has grown, through Project Leyden, into the AOT cache: a file that carries loaded and linked classes _and_, since JDK 25, the method profiles the JIT needs to start compiling immediately instead of watching and counting first. That is **part 3**, and it is where those seconds finally start to shrink.
+
+## References
+
+Some of what I watched and read while learning this:
+
+- [Just In Time (JIT) Compilers](https://www.youtube.com/watch?v=d7KHAVaX_Rs) — Computerphile
+- [Tiered Compilation in JVM](https://www.baeldung.com/jvm-tiered-compilation) — Baeldung
+- [JVM Anatomy 101](https://www.youtube.com/watch?v=BeMi8K0AFAc) — JetBrains

@@ -250,3 +250,13 @@ And here is what struck me once I understood the steps: it is **work that has th
 If the result is the same every time, why not do it once, save it, and reuse it on the next start?
 
 That question is exactly what Project Leyden is about, and it is where this series is going. But there is one more piece of the slowness story first: even after "Started", the app is slow, because all of its code is still running in the interpreter. **Part 2** is about warmup: the JIT compiler, C1 and C2, and why the first requests after a deploy are the slowest. The "shared objects file" from the log gets its answer in part 3.
+
+## References
+
+Some of what I watched and read while learning this:
+
+- [How Java Works (Explained Simply)](https://www.youtube.com/watch?v=_A1oum1KJPs) — Cave of Programming
+- [How the JVM Actually Works](https://www.youtube.com/watch?v=bF28LFPjFsI) — ByteByteGo
+- [JVM Anatomy 101](https://www.youtube.com/watch?v=BeMi8K0AFAc) — JetBrains
+- [A Deep Dive into JVM Start-Up](https://www.youtube.com/watch?v=ED1oc7gn5uY) — Java (official channel)
+- [Class Loaders in Java](https://www.baeldung.com/java-classloaders) — Baeldung

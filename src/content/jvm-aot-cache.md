@@ -2,8 +2,7 @@
 title: From Bytecode to AOT Cache, Part 3 - From CDS to Project Leyden, the AOT Cache
 slug: jvm-aot-cache
 description: Part 3 of my journey into JVM startup. How the JVM saves work between runs, from the 20-year-old CDS trick to the AOT cache of Project Leyden in JDK 24 and 25.
-date: 2026-10-04
-draft: true
+date: 2026-09-06
 tags: ['Java', 'JVM', 'Performance', 'Spring Boot']
 attributes:
   author: Oussema Sahbeni
@@ -113,3 +112,11 @@ Armed with all of this, I pointed the AOT cache at Spring Boot's fat jar, traine
 The 2.3 seconds the fat jar leaves on the table come from the way Spring Boot packages applications: jars nested inside a jar, read by a custom class loader (remember, from part 1, that loading detail I asked you to keep in mind). The cache can store those classes, but it cannot give them its best treatment.
 
 What "packaged differently" means, why the fat jar only gets half the win, and the rules you have to follow to get all of it, is **part 4**.
+
+## References
+
+Some of what I watched and read while learning this:
+
+- [Project Leyden](https://openjdk.org/projects/leyden/) — OpenJDK
+- [Ahead-of-Time Computation in Java 25 (#RoadTo25)](https://www.youtube.com/watch?v=V_Pls6B4_yg) — Java (official channel)
+- [Java AOT in Production at Netflix](https://www.youtube.com/watch?v=4kEh8hxAP4U) — Java (official channel)

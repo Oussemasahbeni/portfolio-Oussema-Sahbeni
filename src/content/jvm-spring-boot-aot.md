@@ -2,7 +2,7 @@
 title: From Bytecode to AOT Cache, Part 4 - Spring Boot, Fat Jars, and the Cache by the Numbers
 slug: jvm-spring-boot-aot
 description: The last part of my journey into JVM startup. Why the AOT cache refuses Spring Boot fat jars, the extract command that fixes it, the rules of the cache, a Dockerfile that does it right, and real measurements on Petclinic.
-date: 2026-10-18
+date: 2026-09-06
 tags: ['Java', 'JVM', 'Performance', 'Spring Boot', 'Docker']
 attributes:
   author: Oussema Sahbeni
@@ -181,3 +181,11 @@ This series started with a pod taking 20 seconds to help during a traffic spike.
 The headline is simple: **6.9 seconds to 2.2, more than 3x, with zero code changes**. One extract command, one training run, two JVM flags. What I would tell my past self is that none of it is magic: every second the cache saves is a second I could name by the end of part 1, spent parsing, verifying and resolving the same 10,000 classes that were exactly the same yesterday.
 
 What comes next for the JVM is more of the same idea: Project Leyden is already testing caching the JIT's compiled code itself, not just the profiles. The gap between "JVM starts" and "JVM is fast" keeps shrinking, and everything in that gap was always work that produced the same result on every run. It just took twenty years of redoing it every time before saving it became the default plan.
+
+## References
+
+Some of what I watched and read while learning this:
+
+- [Packaging: AOT Cache](https://docs.spring.io/spring-boot/reference/packaging/aot-cache.html) — Spring Boot reference documentation
+- [Java AOT in Production at Netflix](https://www.youtube.com/watch?v=4kEh8hxAP4U) — Java (official channel)
+- [Project Leyden](https://openjdk.org/projects/leyden/) — OpenJDK
