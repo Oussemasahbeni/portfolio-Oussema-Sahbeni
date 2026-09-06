@@ -4,6 +4,7 @@ slug: jvm-warmup
 description: Part 2 of my journey into JVM startup. The interpreter, the JIT compiler, C1 and C2, tiered compilation, and why the first requests after a deploy are the slowest.
 date: 2026-09-04
 tags: ['Java', 'JVM', 'Performance', 'Spring Boot']
+coverImage: /images/blog/jvm-aot-cache/jvm-cover-part2.webp
 attributes:
   author: Oussema Sahbeni
 ---

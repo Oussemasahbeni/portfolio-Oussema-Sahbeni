@@ -4,6 +4,7 @@ slug: jvm-aot-cache
 description: Part 3 of my journey into JVM startup. How the JVM saves work between runs, from the 20-year-old CDS trick to the AOT cache of Project Leyden in JDK 24 and 25.
 date: 2026-09-06
 tags: ['Java', 'JVM', 'Performance', 'Spring Boot']
+coverImage: /images/blog/jvm-aot-cache/jvm-cover-part3.webp
 attributes:
   author: Oussema Sahbeni
 ---

@@ -4,6 +4,7 @@ slug: jvm-spring-boot-aot
 description: The last part of my journey into JVM startup. Why the AOT cache refuses Spring Boot fat jars, the extract command that fixes it, the rules of the cache, a Dockerfile that does it right, and real measurements on Petclinic.
 date: 2026-09-06
 tags: ['Java', 'JVM', 'Performance', 'Spring Boot', 'Docker']
+coverImage: /images/blog/jvm-aot-cache/jvm-cover-part4.webp
 attributes:
   author: Oussema Sahbeni
 ---
@@ -79,7 +80,6 @@ That one command boots the app (so the JVM sees every class and every hot method
 ```bash
 java -XX:AOTCache=app.aot -jar application/spring-petclinic-4.0.0-SNAPSHOT.jar
 ```
-
 
 ## The rules of the cache
 

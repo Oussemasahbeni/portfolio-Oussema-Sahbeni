@@ -4,6 +4,7 @@ slug: jvm-startup
 description: My journey to understand why Java apps start slow. Part 1 covers what I learned about bytecode, class loading, linking, initialization, and where all of it lives in memory.
 date: 2026-09-01
 tags: ['Java', 'JVM', 'Performance', 'Spring Boot']
+coverImage: /images/blog/jvm-aot-cache/jvm-cover-part1.webp
 attributes:
   author: Oussema Sahbeni
 ---
