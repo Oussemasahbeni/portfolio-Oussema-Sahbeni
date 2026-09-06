@@ -12,12 +12,16 @@ At work, we run a lot of Spring Boot microservices on Kubernetes. They are not a
 
 So I started digging: why does a Java app take so long to start, and what can we do about it?
 
-The short answer is a new feature of the JVM called the **AOT cache**, which comes from [Project Leyden](https://openjdk.org/projects/leyden/). With it, I got the Spring Petclinic sample app from **6.9 seconds to 2.2 seconds** of startup, with no code change. But before getting there I had to understand a lot of things about the JVM that I had never really looked at. This series is that journey, written the way I understood it.
+The short answer is a new feature of the JVM called the **AOT cache**, which comes from [Project Leyden](https://openjdk.org/projects/leyden/). With it, I got the Spring Petclinic sample app from **6.9 seconds to 2.2 seconds** of startup, with no code change. But before getting there I had to understand a lot of things about the JVM that I had never really looked at.
 
-1. **What the JVM does when you start your app** (you are here)
+That journey was too long for one article, so I wrote it as a **series of four**, and this is part 1:
+
+1. **What the JVM does when you start your app**
 2. [Warmup: why the app is still slow after "Started"](/blog/jvm-warmup)
 3. [From CDS to Project Leyden: the AOT cache](/blog/jvm-aot-cache)
 4. [Spring Boot, fat jars, and the AOT cache by the numbers](/blog/jvm-spring-boot-aot)
+
+Each part builds on the previous one, and the last one ends with real measurements.
 
 In this first part there is no AOT cache at all. It is only about what the JVM is doing during those seconds, because the cache makes no sense if you do not know what it is caching.
 
