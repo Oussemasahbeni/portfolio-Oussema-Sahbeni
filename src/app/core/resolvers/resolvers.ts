@@ -6,6 +6,22 @@ import { ContentMetadata } from '../../models/content-metadata';
 const BASE_URL = 'https://oussemasahbeni.com';
 const DEFAULT_IMAGE = '/default-social.webp';
 
+function toAbsoluteUrl(path: string): string {
+  if (path.startsWith('http://') || path.startsWith('https://')) {
+    return path;
+  }
+  return `${BASE_URL}${path.startsWith('/') ? '' : '/'}${path}`;
+}
+
+// LinkedIn's crawler only supports JPG/PNG/GIF for og:image, so social tags
+// point at a .jpg copy that must exist next to every local .webp cover.
+function toSocialImage(path: string): string {
+  if (path.startsWith('http://') || path.startsWith('https://')) {
+    return path;
+  }
+  return path.replace(/\.webp$/, '.jpg');
+}
+
 function injectActiveContentMetadata(
   route: ActivatedRouteSnapshot
 ): ContentMetadata {
@@ -26,9 +42,7 @@ export const postMetaResolver: ResolveFn<MetaTag[]> = (route) => {
   const meta = injectActiveContentMetadata(route);
 
   const postUrl = `${BASE_URL}/blog/${meta.slug}`;
-  const imageUrl = meta.coverImage
-    ? `${BASE_URL}/${meta.coverImage}`
-    : `${BASE_URL}${DEFAULT_IMAGE}`;
+  const imageUrl = toAbsoluteUrl(toSocialImage(meta.coverImage || DEFAULT_IMAGE));
 
   return [
     { name: 'description', content: meta.description },

@@ -2,7 +2,7 @@
 title: From Bytecode to AOT Cache, Part 4 - Spring Boot, Fat Jars, and the Cache by the Numbers
 slug: jvm-spring-boot-aot
 description: The last part of my journey into JVM startup. Why the AOT cache refuses Spring Boot fat jars, the extract command that fixes it, the rules of the cache, a Dockerfile that does it right, and real measurements on Petclinic.
-date: 2026-09-06
+date: 2026-09-08
 tags: ['Java', 'JVM', 'Performance', 'Spring Boot', 'Docker']
 coverImage: /images/blog/jvm-aot-cache/jvm-cover-part4.webp
 attributes:
@@ -130,13 +130,13 @@ One honest note before the tables: these are measurements from my desktop, not f
 
 ### Startup
 
-| Configuration | Startup (median of 10) | vs baseline |
-| --- | --- | --- |
-| Fat jar, nothing | 6.88 s | - |
-| Fat jar + AOT cache | 4.50 s | -35% |
-| Extracted, no cache | 5.44 s | -21% |
-| Extracted + AppCDS (`-XX:ArchiveClassesAtExit`) | 3.22 s | -53% |
-| Extracted + AOT cache (`-XX:AOTCache`) | **2.22 s** | **-68%** |
+| Configuration                                   | Startup (median of 10) | vs baseline |
+| ----------------------------------------------- | ---------------------- | ----------- |
+| Fat jar, nothing                                | 6.88 s                 | -           |
+| Fat jar + AOT cache                             | 4.50 s                 | -35%        |
+| Extracted, no cache                             | 5.44 s                 | -21%        |
+| Extracted + AppCDS (`-XX:ArchiveClassesAtExit`) | 3.22 s                 | -53%        |
+| Extracted + AOT cache (`-XX:AOTCache`)          | **2.22 s**             | **-68%**    |
 
 Three things jump out of this table:
 
@@ -148,10 +148,10 @@ Three things jump out of this table:
 
 Startup is what we just measured; warmup is what your users feel. So I started the extracted app, with and without the cache, and timed 300 sequential requests to `GET /owners?lastName=` from the moment the app was up:
 
-| | First request | Requests 1-100 (avg) | Requests 201-300 (avg) |
-| --- | --- | --- | --- |
-| No cache | 494 ms | 15.4 ms | 5.9 ms |
-| AOT cache (with JEP 515 profiles) | 392 ms | 14.8 ms | 6.3 ms |
+|                                   | First request | Requests 1-100 (avg) | Requests 201-300 (avg) |
+| --------------------------------- | ------------- | -------------------- | ---------------------- |
+| No cache                          | 494 ms        | 15.4 ms              | 5.9 ms                 |
+| AOT cache (with JEP 515 profiles) | 392 ms        | 14.8 ms              | 6.3 ms                 |
 
 I will be honest: I expected more. The first request is about 20% faster with the cache, and after that the two curves are the same, the small differences are noise. But this result makes sense, and it is worth understanding rather than hiding. Warmup, from part 2, is the time until the JIT has compiled your hot methods. On my idle 8-core desktop, the JIT catches up in a couple of seconds no matter what: there is always a free core to compile on. The cached profiles from part 3 pay off in the situation my machine is not in: a pod with a 1 CPU limit, where the JIT and your requests fight for the same core and every compilation the cache makes earlier or cheaper is a request that does not stutter. Warmup on this table is the healthy-machine case; the Kubernetes case is exactly where it should look better.
 
@@ -159,13 +159,13 @@ I will be honest: I expected more. The first request is about 20% faster with th
 
 Nothing is free; here is the bill:
 
-| Cost | Measured |
-| --- | --- |
-| Cache file size (`app.aot`) | 124 MB |
-| The AppCDS archive, for comparison (`app.jsa`) | 97 MB |
-| Training run + cache creation | 2 min 12 s |
+| Cost                                                          | Measured                   |
+| ------------------------------------------------------------- | -------------------------- |
+| Cache file size (`app.aot`)                                   | 124 MB                     |
+| The AppCDS archive, for comparison (`app.jsa`)                | 97 MB                      |
+| Training run + cache creation                                 | 2 min 12 s                 |
 | Image size increase (same Dockerfile without the cache steps) | +158 MB (598 MB -> 756 MB) |
-| Extra memory at runtime (working set just after start) | +29 MB (337 MB -> 366 MB) |
+| Extra memory at runtime (working set just after start)        | +29 MB (337 MB -> 366 MB)  |
 
 ### The limits, honestly
 
