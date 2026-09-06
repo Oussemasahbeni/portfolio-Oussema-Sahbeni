@@ -68,6 +68,22 @@ html {
     scroll-behavior: auto;
   }
 }
+
+/* Inline code in blog prose: GitHub-style pill instead of the typography
+   plugin's default visible backticks. Scoped to :not(pre) so Shiki code
+   blocks are untouched. */
+.prose :where(:not(pre) > code)::before,
+.prose :where(:not(pre) > code)::after {
+  content: none;
+}
+.prose :where(:not(pre) > code) {
+  background-color: var(--color-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 0.375rem;
+  padding: 0.125rem 0.375rem;
+  font-weight: 500;
+  font-size: 0.875em;
+}
 /*
   Remove built-in form typography styles
 */
