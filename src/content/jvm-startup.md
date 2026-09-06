@@ -8,17 +8,16 @@ attributes:
   author: Oussema Sahbeni
 ---
 
-At work, we run a lot of Spring Boot microservices on Kubernetes. They are not all the same size, and they do not all start at the same speed. The small ones start in about 4 seconds. The big ones take up to 20 seconds. When Kubernetes needs to scale up because traffic is coming in, 20 seconds is a long time to wait for a pod that is supposed to help _right now_.
+At work, we run a lot of Spring Boot microservices on Kubernetes. They are not all the same size, and they do not all start at the same speed. The small ones start in about 4 seconds. The big ones take up to 20 seconds. When Kubernetes needs to scale up because traffic is coming in, 20 seconds is a long time to wait for a pod that is supposed to help right now.
 
 So I started digging: why does a Java app take so long to start, and what can we do about it?
 
-The short answer is a new feature of the JVM called the **AOT cache**, which comes from [Project Leyden](https://openjdk.org/projects/leyden/). With it, I got the Spring Petclinic sample app from **6 seconds to 2 seconds** of startup, with no code change. But before getting there I had to understand a lot of things about the JVM that I had never really looked at. This series is that journey, written the way I understood it.
+The short answer is a new feature of the JVM called the **AOT cache**, which comes from [Project Leyden](https://openjdk.org/projects/leyden/). With it, I got the Spring Petclinic sample app from **6.9 seconds to 2.2 seconds** of startup, with no code change. But before getting there I had to understand a lot of things about the JVM that I had never really looked at. This series is that journey, written the way I understood it.
 
-1. **What the JVM does when you start your app**
-2. Warmup: why the app is still slow after "Started"
-3. From CDS to Project Leyden: the AOT cache
-4. Spring Boot, fat jars, and the rules of the cache
-5. AOT cache by the numbers
+1. **What the JVM does when you start your app** (you are here)
+2. [Warmup: why the app is still slow after "Started"](/blog/jvm-warmup)
+3. [From CDS to Project Leyden: the AOT cache](/blog/jvm-aot-cache)
+4. [Spring Boot, fat jars, and the AOT cache by the numbers](/blog/jvm-spring-boot-aot)
 
 In this first part there is no AOT cache at all. It is only about what the JVM is doing during those seconds, because the cache makes no sense if you do not know what it is caching.
 
@@ -59,7 +58,7 @@ What I did not fully realize before is that the JVM has **two** ways to do this 
 - The **interpreter** reads the bytecode instruction by instruction and executes it. It can start right away, but it is slow, because it re-translates the same instructions every time they run.
 - The **JIT compiler** (Just-In-Time) takes a whole method, turns it into real native code once, and from then on the CPU runs that native code directly. This is fast, but the translation itself costs CPU time.
 
-The JVM starts everything in the interpreter and only compiles the methods that are actually used a lot. How it decides what to compile, and why that makes Java apps slow _after_ they start, is a story of its own: it gets the whole of part 2.
+The JVM starts everything in the interpreter and only compiles the methods that are actually used a lot. How it decides what to compile, and why that makes Java apps slow after they start, is a story of its own: it gets the whole of part 2.
 
 So a Java app pays two separate costs when it starts:
 
@@ -99,15 +98,15 @@ Once parsing is done, the class exists in memory in two forms. The JVM builds it
 
 One thing worth knowing: the loading is done by a **class loader**, and there are several of them. The bootstrap loader loads the core JDK classes (`java.lang.*`), the platform loader loads the rest of the JDK, and the application loader loads your classpath. Frameworks can add their own. Spring Boot does exactly that: a fat jar is loaded by a custom class loader that knows how to read jars nested inside the main jar. This detail will matter a lot in part 4, so keep it in mind.
 
-The loaders form a hierarchy, and each one asks its parent before loading anything itself. The reason is not to save work, it is identity: in the JVM a class is identified by its name _plus_ the loader that loaded it. If two loaders each loaded `java.lang.String`, you would have two incompatible `String` types in the same process. Delegation guarantees one copy, owned by one loader. It also means you cannot shadow a JDK class from your classpath: the bootstrap loader always finds the real one first.
+The loaders form a hierarchy, and each one asks its parent before loading anything itself. The reason is not to save work, it is identity: in the JVM a class is identified by its name plus the loader that loaded it. If two loaders each loaded `java.lang.String`, you would have two incompatible `String` types in the same process. Delegation guarantees one copy, owned by one loader. It also means you cannot shadow a JDK class from your classpath: the bootstrap loader always finds the real one first.
 
-![The three built-in class loaders: bootstrap, platform and application, each asking its parent first](/images/blog/jvm-aot-cache/jvm-class-loaders.webp)
+![The class loader hierarchy: bootstrap, platform and application are built into the JDK, and frameworks add a custom loader below them such as Spring Boot's LaunchedClassLoader. Each one asks its parent first](/images/blog/jvm-aot-cache/jvm-class-loaders.webp)
 
 ### Linking
 
 I thought linking was the JVM verifying the bytecode, and that is true, but it is only one of three things that happen in linking.
 
-**Verification.** The JVM checks that the bytecode is valid and safe: types are consistent (you cannot add an object to an integer), jumps go to real instructions, `final` methods are not overridden, and so on. Verification is about the _structure_ of the code, not about what happens when it runs. What surprised me is that verification is **real CPU work**: it is basically a type analysis of every method of every class. For a hello world it is nothing. For a Spring Boot app with more than ten thousand classes, it adds up.
+**Verification.** The JVM checks that the bytecode is valid and safe: types are consistent (you cannot add an object to an integer), jumps go to real instructions, `final` methods are not overridden, and so on. Verification is about the structure of the code, not about what happens when it runs. What surprised me is that verification is **real CPU work**: it is basically a type analysis of every method of every class. For a hello world it is nothing. For a Spring Boot app with more than ten thousand classes, it adds up.
 
 **Preparation.** The JVM allocates the memory for the static fields of the class and sets them to their default values: numeric fields to 0, booleans to false, object references to null. The important detail is that your assignments do **not** run here. Take this class:
 
@@ -156,7 +155,7 @@ total = 10       // the static block runs: count * 2
 
 It happens the first time the class is really used (you create an instance, call a static method, or access a static field).
 
-Which means initialization is the only one of the three steps where _your_ code runs. A static `Logger` field, a static `Pattern.compile(...)`, a static map filled from a file: all of that runs during initialization, and it can be as slow as you make it.
+Which means initialization is the only one of the three steps where your code runs. A static `Logger` field, a static `Pattern.compile(...)`, a static map filled from a file: all of that runs during initialization, and it can be as slow as you make it.
 
 ### Seeing it for yourself
 
@@ -202,11 +201,35 @@ This is the region everybody knows. Every object you create with `new` goes to t
 
 Remember the loading step, where the JVM parses the `.class` file into its own internal representation: the method bytecode, the constant pool, the field layout? All of that goes to the **metaspace**. Not the heap. One entry per loaded class, and it stays there as long as the class stays loaded, which in practice means as long as the app runs.
 
-This is the region that grows with the _number of classes_, so a Spring Boot app that loads 10,000+ classes has a metaspace of tens of megabytes before it has done any real work. If you have been doing Java long enough to have seen `OutOfMemoryError: PermGen space`: the metaspace is what replaced PermGen in Java 8.
+For our `Hello` class, the metaspace entry is everything we met earlier in this article, in one place:
+
+![The metaspace entry of the Hello class: its constant pool, field layout and method bytecode, with the Class object in the heap as a small handle pointing to it](/images/blog/jvm-aot-cache/jvm-metaspace-entry.webp)
+
+The `Class` object in the heap is just a small handle; this entry is the real thing the JVM works with when it runs your code.
+
+This is the region that grows with the number of classes, so a Spring Boot app that loads 10,000+ classes has a metaspace of tens of megabytes before it has done any real work. If you have been doing Java long enough to have seen `OutOfMemoryError: PermGen space`: the metaspace is what replaced PermGen in Java 8.
 
 ### The thread stacks
 
-Each thread gets its own stack, and every method call pushes a **frame** onto it: the parameters, the local variables, and where to return when the method is done. When the method returns, the frame is popped. This is the "stack" in stack trace and in `StackOverflowError`: a stack trace is literally the frames of one thread's stack printed top to bottom, and the error is what happens when a recursion pushes more frames than the stack can hold.
+Each thread gets its own stack, and every method call pushes a **frame** onto it: the parameters, the local variables, and where to return when the method is done. When the method returns, the frame is popped. Take the `add` method from the beginning of the article, called from `main`:
+
+```java
+public static void main(String[] args) {
+    int result = add(2, 3);
+}
+```
+
+While `add` is executing, the main thread's stack looks like this:
+
+![The main thread's stack while add is running: the frame of add (a=2, b=3) sits on top of the frame of main, which is waiting for the result](/images/blog/jvm-aot-cache/jvm-thread-stack.webp)
+
+Each box is one frame. `a` and `b` live in the frame of `add`, and the moment `add` returns, its frame is gone and the `5` lands in `result`, one frame below. This is the "stack" in stack trace and in `StackOverflowError`: a stack trace is literally this list printed top to bottom, and the error is what happens when a recursion pushes more frames than the stack can hold.
+
+And where does the `5` come from? This is where the bytecode from the beginning of the article finally clicks. Inside every frame, next to the local variables, there is a second, tiny stack called the **operand stack**, and it is what the bytecode instructions actually work with. `iload_0` means "push local variable 0 (our `a`) onto it". `iadd` means "pop two values, add them, push the result". `ireturn` means "pop the result and hand it to the frame below". Here is `add(2, 3)` running, one instruction at a time:
+
+![The operand stack inside the frame of add, step by step: iload_0 pushes 2, iload_1 pushes 3, iadd replaces them with 5, ireturn hands the 5 to main's frame](/images/blog/jvm-aot-cache/jvm-operand-stack.webp)
+
+So `iload_0, iload_1, iadd, ireturn` reads as: push 2, push 3, replace them with their sum, give it to the caller. Every instruction takes its inputs from this little stack and leaves its output on it. That is why bytecode never mentions registers or memory addresses, and it is a big part of why the same `.class` file runs on any CPU.
 
 One thing I had never made explicit for myself: local variables do not live in the heap. An `int x = 5` inside a method lives in the frame and disappears with it. Only what you `new` goes to the heap; the local variable just holds a reference pointing there.
 

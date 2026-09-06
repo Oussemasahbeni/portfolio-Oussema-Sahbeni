@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => {
           highlighter: 'shiki',
           shikiOptions: {
             highlighter: {
-              additionalLangs: ['bash', 'java', 'yaml'],
+              additionalLangs: ['bash', 'java', 'yaml', 'dockerfile'],
             },
             highlight: {
               theme: 'github-dark',
