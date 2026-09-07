@@ -19,12 +19,11 @@ export class Experience {
         'Architected the entire frontend from the ground up with Angular, delivering a scalable and maintainable UI foundation',
         'Designed and implemented a micro-frontend architecture, enabling independent team delivery and modular deployments',
         'Contributed a range of new features while continuously improving application performance across the stack',
-        'Optimized backend startup times using GraalVM native images, significantly reducing cold-start latency',
+        'Optimized backend startup times using Project Leyden(Aot Cache), significantly reducing startup latency up to 53%',
       ],
       skills: [
         'Angular',
         'Micro-frontends',
-        'GraalVM',
         'Spring Boot',
         'Keycloak',
         'Kafka',
